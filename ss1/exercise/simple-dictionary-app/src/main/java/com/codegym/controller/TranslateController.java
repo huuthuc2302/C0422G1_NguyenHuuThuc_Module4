@@ -14,12 +14,12 @@ public class TranslateController {
     private ITranslateRepository iTranslateRepository;
 
     @GetMapping("/")
-    public String goTranslate(){
+    public String goTranslate() {
         return "/translate";
     }
 
     @GetMapping("/begin")
-    public String resurtBegin(@RequestParam String keywork, Model model){
+    public String resurtBegin(@RequestParam String keywork, Model model) {
         String convert = this.iTranslateRepository.convert(keywork);
         model.addAttribute("resurt", convert);
         return "/translate";

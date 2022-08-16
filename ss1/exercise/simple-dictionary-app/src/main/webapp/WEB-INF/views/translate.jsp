@@ -11,21 +11,21 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>DỊCH TỪ ĐƠN GIẢN</h1>
-    <form action="begin" method="get">
-        <div>
-            <lable for="keyword"> Nhập từ muốn dich sang tiếng việt</lable>
-        </div>
+<h1>DỊCH TỪ ĐƠN GIẢN</h1>
+<form action="begin" method="get">
+    <div>
+        <lable for="keyword"> Nhập từ muốn dich sang tiếng việt</lable>
+    </div>
 
-        <div>
-            <input type="text" id="keyword" name="keywork">
-        </div>
+    <div>
+        <input type="text" id="keyword" name="keywork">
+    </div>
 
-        <div>
-            <button>Dịch</button>
-        </div>
-    </form>
-    <h3>Kết quả</h3>
-    <p>${resurt}</p>
+    <div>
+        <button>Dịch</button>
+    </div>
+</form>
+<h3>Kết quả</h3>
+<p>${resurt}</p>
 </body>
 </html>

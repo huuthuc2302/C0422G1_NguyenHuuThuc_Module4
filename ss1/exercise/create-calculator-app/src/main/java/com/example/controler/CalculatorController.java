@@ -19,10 +19,9 @@ public class CalculatorController {
     }
 
     @GetMapping("/app")
-    public String resurtApp(@RequestParam double money, Model model){
-//        double total = money * 23000;
+    public String resurtApp(@RequestParam double money, Model model) {
         double total = this.iCalculatorService.total(money);
-        model.addAttribute("resurt", total);
+        model.addAttribute("result", total);
         return "/calculator";
     }
 }

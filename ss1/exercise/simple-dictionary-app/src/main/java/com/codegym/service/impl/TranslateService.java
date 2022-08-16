@@ -5,9 +5,6 @@ import com.codegym.service.ITranslateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
-
-
 @Service
 public class TranslateService implements ITranslateService {
 

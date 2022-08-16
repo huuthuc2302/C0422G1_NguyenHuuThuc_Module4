@@ -1,5 +1,5 @@
 package com.codegym.repository;
 
 public interface ITranslateRepository {
-    String convert (String keywork);
+    String convert(String keywork);
 }
