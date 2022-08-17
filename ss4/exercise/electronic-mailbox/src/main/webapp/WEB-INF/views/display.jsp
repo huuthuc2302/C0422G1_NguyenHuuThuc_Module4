@@ -25,8 +25,12 @@
             <td><form:textarea path="signature"/></td>
         </tr>
         <tr>
-            <td><button type="submit">Update</button></td>
-            <td><button>Cancel</button></td>
+            <td>
+                <button type="submit">Update</button>
+            </td>
+            <td>
+                <button>Cancel</button>
+            </td>
         </tr>
     </table>
 </form:form>

@@ -24,7 +24,7 @@ public class MailBoxController {
     }
 
     @PostMapping("/update")
-    public String updateEmail(@ModelAttribute MailBox mailBox , Model model) {
+    public String updateEmail(@ModelAttribute MailBox mailBox, Model model) {
         model.addAttribute("boxMail", mailBox);
         return "info";
     }
