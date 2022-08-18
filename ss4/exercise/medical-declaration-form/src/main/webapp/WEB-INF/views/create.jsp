@@ -2,12 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>ADD</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
-            integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
-            crossorigin="anonymous"></script>
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+          crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
@@ -18,7 +16,7 @@
         <p class="text-danger">Khuyến cáo: Khai báo thông tin sai là vi phạm pháp luật Việt Nam và có thể xử lý hình
             sự</p>
     </div>
-    <form:form action="/create" method="post" modelAttribute="declaration">
+    <form:form action="/save" method="post" modelAttribute="declaration">
     <div class="mb-3">
         <form:label path="name" class="form-label">Họ tên (Ghi chữ IN HOA) (*)</form:label>
         <form:input type="text" path="name" class="form-control"/>
@@ -28,7 +26,7 @@
         <div class="col">
             <div class="mb-3">
                 <label class="form-label">Năm sinh</label>
-                <form:select path="birth" items="${listYear}" class="form-select" />
+                <form:select path="birth" items="${listYear}" class="form-select"/>
             </div>
         </div>
         <div class="col">
@@ -47,7 +45,7 @@
 
     <div class="mb-3">
         <label class="form-label">Số hộ chiếu hoặc CMND hoặc giấy tờ thông hành khác</label>
-        <form:input type="text" path="idCard" class="form-control" placeholder="VD: 201757575" />
+        <form:input type="text" path="idCard" class="form-control" placeholder="VD: 201757575"/>
     </div>
     <div class="mb-3">
         <label class="form-label">Thông tin đi lại (*)</label>
@@ -107,5 +105,8 @@
     </div>
 </div>
 </form:form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"
+        integrity="sha384-ODmDIVzN+pFdexxHEHFBQH3/9/vQ9uori45z4JjnFsRydbmQbmL5t1tQ0culUzyK"
+        crossorigin="anonymous"></script>
 </body>
 </html>

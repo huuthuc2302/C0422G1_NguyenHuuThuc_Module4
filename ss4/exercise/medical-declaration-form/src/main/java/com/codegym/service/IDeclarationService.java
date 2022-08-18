@@ -6,9 +6,13 @@ import java.util.List;
 
 public interface IDeclarationService {
 
-    public void create(Declaration declaration);
+    void create(Declaration declaration);
 
-    public void update(Declaration declaration);
+    List<Declaration> listDeclaration();
+
+    void update(int id, Declaration declaration);
+
+    Declaration findById(int id);
 
     List<String> dayList();
 

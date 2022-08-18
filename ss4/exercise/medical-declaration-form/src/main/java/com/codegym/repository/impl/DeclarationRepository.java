@@ -5,19 +5,35 @@ import com.codegym.repository.IDeclarationRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class DeclarationRepository implements IDeclarationRepository {
 
+    private static Map<Integer, Declaration> declarationMap = new HashMap<>();
+
     @Override
     public void create(Declaration declaration) {
-
+        int id = declarationMap.size() + 1;
+        declaration.setId(id);
+        declarationMap.put(id, declaration);
     }
 
     @Override
-    public void update(Declaration declaration) {
+    public List<Declaration> listDeclaration() {
+        return new ArrayList<>(declarationMap.values());
+    }
 
+    @Override
+    public void update(int id, Declaration declaration) {
+        declarationMap.put(id, declaration);
+    }
+
+    @Override
+    public Declaration findById(int id) {
+        return declarationMap.get(id);
     }
 
     @Override

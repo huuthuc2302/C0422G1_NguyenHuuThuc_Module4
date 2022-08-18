@@ -14,15 +14,24 @@ public class DeclarationService implements IDeclarationService {
     @Autowired
     private IDeclarationRepository iDeclarationRepository;
 
-
     @Override
     public void create(Declaration declaration) {
-
+        iDeclarationRepository.create(declaration);
     }
 
     @Override
-    public void update(Declaration declaration) {
+    public List<Declaration> listDeclaration() {
+        return iDeclarationRepository.listDeclaration();
+    }
 
+    @Override
+    public void update(int id, Declaration declaration) {
+        iDeclarationRepository.update(id, declaration);
+    }
+
+    @Override
+    public Declaration findById(int id) {
+        return iDeclarationRepository.findById(id);
     }
 
     @Override

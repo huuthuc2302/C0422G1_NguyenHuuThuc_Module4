@@ -6,10 +6,13 @@ import java.util.List;
 
 public interface IDeclarationRepository {
 
-
     void create(Declaration declaration);
 
-    void update(Declaration declaration);
+    List<Declaration> listDeclaration();
+
+    void update(int id, Declaration declaration);
+
+    Declaration findById(int id);
 
     List<String> dayList();
 
