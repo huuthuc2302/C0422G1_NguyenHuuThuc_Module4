@@ -23,84 +23,91 @@
         <form:label path="name" class="form-label">Họ tên (Ghi chữ IN HOA) (*)</form:label>
         <form:input type="text" path="name" class="form-control"/>
     </div>
-    
-    <tr>
-        <td colspan="2">Năm sinh</td>
-        <td colspan="2">Giới tính</td>
-        <td colspan="2">Quốc tịch</td>
-    </tr>
-    <tr>
-        <td colspan="2">
-            <form:select path="birth" items="${listYear}"/>
-        </td>
-        <td colspan="2">
-            <form:select path="gender" items="${listGender}"/>
-        </td>
-        <td colspan="2">
-            <form:select path="nationality" items="${listNation}"/>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="6">Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác (*)</td>
-    </tr>
-    <tr>
-        <td colspan="6">
-            <form:input type="text" path="idCard"/>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="6">Thông tin đi lại (*)</td>
-    </tr>
-    <tr>
-        <td colspan="4">
-            <form:radiobuttons path="vehicles" items="${listVehicles}"/>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3">Số hiệu phương tiện</td>
-        <td colspan="3">Số ghế</td>
-    </tr>
-    <tr>
-        <td colspan="3">
-            <form:input type="text" path="licensePlates"/>
-        </td>
-        <td colspan="3">
-            <form:input type="text" path="seats"/>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="3">Ngày khởi hành</td>
-        <td colspan="3">Ngày kết thúc</td>
-    </tr>
-    <tr>
-        <td>
-            <form:select path="startDay" items="${listDay}"/>
-        </td>
-        <td>
-            <form:select path="startMonth" items="${listMonth}"/>
-        </td>
-        <td>
-            <form:select path="startYear" items="${listYear}"/>
-        </td>
-        <td>
-            <form:select path="endDay" items="${listDay}"/>
-        </td>
-        <td>
-            <form:select path="endMonth" items="${listMonth}"/>
-        </td>
-        <td>
-            <form:select path="endYear" items="${listYear}"/>
-        </td>
-    </tr>
-    <tr>
-        <td colspan="6">Trong vòng 14 ngày qua, Anh/Chị có đến tỉnh/thành phố? (*)</td>
-    </tr>
-    <tr>
-        <td colspan="6">
-            <form:textarea path="information"/>
-        </td>
-    </tr>
-    <button type="submit">Gửi tờ khai</button>
+
+    <div class="row">
+        <div class="col">
+            <div class="mb-3">
+                <label class="form-label">Năm sinh</label>
+                <form:select path="birth" items="${listYear}" class="form-select" />
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label class="form-label">Giới tính</label>
+                <form:select path="gender" items="${listGender}" class="form-select"/>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label class="form-label">Quốc tịch</label>
+                <form:select path="nationality" items="${listNation}" class="form-select"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Số hộ chiếu hoặc CMND hoặc giấy tờ thông hành khác</label>
+        <form:input type="text" path="idCard" class="form-control" placeholder="VD: 201757575" />
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Thông tin đi lại (*)</label>
+        <form:radiobuttons path="vehicles" items="${listVehicles}" class="form-check-input"/>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="mb-3">
+                <label class="form-label">Số hiệu phương tiện</label>
+                <form:input type="text" path="licensePlates" class="form-control"/>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-3">
+                <label class="form-label">Số ghế</label>
+                <form:input type="text" path="seats" class="form-control"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="mb-1">
+                <label class="form-label">Ngày khởi hành</label>
+                <form:select path="startDay" items="${listDay}" class="form-select"/>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Tháng khởi hành</label>
+                <form:select path="startMonth" items="${listMonth}" class="form-select"/>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Năm khởi hành</label>
+                <form:select path="startYear" items="${listYear}" class="form-select"/>
+            </div>
+        </div>
+        <div class="col">
+            <div class="mb-1">
+                <label class="form-label">Ngày kết thúc</label>
+                <form:select path="endDay" items="${listDay}" class="form-select"/>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Tháng kết thúc</label>
+                <form:select path="endMonth" items="${listMonth}" class="form-select"/>
+            </div>
+            <div class="mb-1">
+                <label class="form-label">Năm kết thúc</label>
+                <form:select path="endYear" items="${listYear}" class="form-select"/>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Trong vòng 14 ngày qua, Anh/chị có đến tỉnh/thành phố nào? (*)</label>
+        <form:textarea path="information" class="form-control"/>
+    </div>
+
+    <div class="text-center p-2">
+        <button type="submit" class="btn btn-success">Gửi tờ khai</button>
+    </div>
 </div>
 </form:form>
 </body>
