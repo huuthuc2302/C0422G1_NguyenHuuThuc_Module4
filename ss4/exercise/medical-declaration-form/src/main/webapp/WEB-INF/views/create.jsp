@@ -70,33 +70,30 @@
     </div>
 
     <div class="row">
-        <div class="col">
-            <div class="mb-1">
-                <label class="form-label">Ngày khởi hành</label>
-                <form:select path="startDay" items="${listDay}" class="form-select"/>
-            </div>
-            <div class="mb-1">
-                <label class="form-label">Tháng khởi hành</label>
-                <form:select path="startMonth" items="${listMonth}" class="form-select"/>
-            </div>
-            <div class="mb-1">
-                <label class="form-label">Năm khởi hành</label>
-                <form:select path="startYear" items="${listYear}" class="form-select"/>
-            </div>
+        <div class="col-lg-2">
+            <label class="form-label">Ngày khởi hành</label>
+            <form:select path="startDay" items="${listDay}" class="form-select"/>
         </div>
-        <div class="col">
-            <div class="mb-1">
-                <label class="form-label">Ngày kết thúc</label>
-                <form:select path="endDay" items="${listDay}" class="form-select"/>
-            </div>
-            <div class="mb-1">
-                <label class="form-label">Tháng kết thúc</label>
-                <form:select path="endMonth" items="${listMonth}" class="form-select"/>
-            </div>
-            <div class="mb-1">
-                <label class="form-label">Năm kết thúc</label>
-                <form:select path="endYear" items="${listYear}" class="form-select"/>
-            </div>
+        <div class="col-lg-2">
+            <label class="form-label">.</label>
+            <form:select path="startMonth" items="${listMonth}" class="form-select"/>
+        </div>
+        <div class="col-lg-2">
+            <label class="form-label">.</label>
+            <form:select path="startYear" items="${listYear}" class="form-select"/>
+        </div>
+
+        <div class="col-lg-2">
+            <label class="form-label">Ngày kết thúc</label>
+            <form:select path="endDay" items="${listDay}" class="form-select"/>
+        </div>
+        <div class="col-lg-2">
+            <label class="form-label">.</label>
+            <form:select path="endMonth" items="${listMonth}" class="form-select"/>
+        </div>
+        <div class="col-lg-2">
+            <label class="form-label">.</label>
+            <form:select path="endYear" items="${listYear}" class="form-select"/>
         </div>
     </div>
 
