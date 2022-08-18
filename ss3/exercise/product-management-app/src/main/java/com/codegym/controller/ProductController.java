@@ -49,11 +49,7 @@ public class ProductController {
         return "/view";
     }
 
-    @GetMapping("/search")
-    public String search(@RequestParam String name, Model model) {
-        model.addAttribute("product", iProductService.searchProductByName(name));
-        return "/index";
-    }
+
 
 
     @PostMapping("/save")
@@ -74,5 +70,12 @@ public class ProductController {
         iProductService.remove(product.getId());
         redirect.addFlashAttribute("success", "Removed customer successfully!");
         return "redirect:/product";
+    }
+
+    @PostMapping("/search")
+    public String search(@RequestParam String name, Model model) {
+        model.addAttribute("products", iProductService.searchProductByName(name));
+        model.addAttribute("name", name);
+        return "/index";
     }
 }
