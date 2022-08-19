@@ -3,10 +3,7 @@ package com.codegym.repository.impl;
 import com.codegym.model.Product;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class IProductRepository implements com.codegym.repository.IProductRepository {
@@ -50,9 +47,9 @@ public class IProductRepository implements com.codegym.repository.IProductReposi
     @Override
     public List<Product> searchProductByName(String name) {
         List<Product> productList = new ArrayList<>();
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getName().toLowerCase().contains(name.toLowerCase())) {
-                productList.add(products.get(i));
+        for (Product p : products.values()) {
+            if (p.getName().toLowerCase().contains(name.toLowerCase(Locale.ROOT))) {
+                productList.add(p);
             }
         }
         return productList;
