@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>List Music</title>
+</head>
+<body>
+<h3>List Music</h3>
+<form th:action="@{/musics/search}" th:object="${music}" method="get" novalidate="novalidate">
+    <input type="text" th:field="*{nameSong}">
+    <input type="submit" value="Search">
+</form>
+<p>
+    <a th:href="@{/musics/add}">
+        Add new song
+    </a>
+</p>
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name Song</th>
+        <th>Artist</th>
+        <th>Type</th>
+        <th>Link</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="row, rowStat : ${listMusic}">
+        <td th:text="${row.getIdSong()}"></td>
+        <td th:text="${row.getNameSong()}"></td>
+        <td th:text="${row.getArtist()}"></td>
+        <td th:text="${row.getType()}"></td>
+        <td th:text="${row.getLink()}"></td>
+        <td><a th:href="@{/musics/{id}/edit(id=${row.getIdSong()})}">Edit</a></td>
+        <td><a th:href="@{/musics/{id}/delete(id=${row.getIdSong()})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
