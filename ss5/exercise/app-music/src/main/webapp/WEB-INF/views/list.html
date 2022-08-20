@@ -34,7 +34,6 @@
         <td th:text="${music.nameSong}"></td>
         <td th:text="${music.artist}"></td>
         <td th:text="${music.type}"></td>
-<!--        <td th:text="${row.getLink()}"></td>-->
         <td>
             <audio controls>
                 <source th:src="@{'/musics/' + ${music.link}}">

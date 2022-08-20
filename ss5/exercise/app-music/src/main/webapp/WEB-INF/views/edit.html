@@ -13,7 +13,7 @@
 </p>
 <div id="form">
     <form th:action="@{/musics/update}" th:object="${music}"
-          method="POST" novalidate="novalidate">
+          method="post" novalidate="novalidate">
         <input type="hidden" th:field="*{idSong}"/>
         <div>
             <label>Name Song</label>

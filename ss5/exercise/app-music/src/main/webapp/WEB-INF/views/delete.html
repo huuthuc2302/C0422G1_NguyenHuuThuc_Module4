@@ -12,8 +12,8 @@
     </a>
 </p>
 <div id="form">
-    <form action="#" th:action="@{/musics/delete}" th:object="${music}"
-          method="POST" novalidate="novalidate">
+    <form th:action="@{/musics/delete}" th:object="${music}"
+          method="post" novalidate="novalidate">
         <input type="hidden" th:field="*{idSong}"/>
         <div>
             <label>Name Song</label>
