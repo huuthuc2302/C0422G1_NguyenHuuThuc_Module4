@@ -21,7 +21,7 @@ public class MusicController {
     private IMusicService iMusicService;
 
     @GetMapping("")
-    public String home(Model model){
+    public String home(Model model) {
         List<Music> musicList = iMusicService.getAll();
         model.addAttribute("listMusic", musicList);
         model.addAttribute("music", new Music());

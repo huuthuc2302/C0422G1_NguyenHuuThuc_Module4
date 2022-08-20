@@ -52,4 +52,5 @@ public class MusicRepository implements IMusicRepository {
                 setParameter(1, "%" + music.getNameSong() + "%").getResultList();
         return searchList;
     }
+
 }

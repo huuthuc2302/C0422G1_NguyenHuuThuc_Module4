@@ -29,14 +29,19 @@
     </tr>
     </thead>
     <tbody>
-    <tr th:each="row, rowStat : ${listMusic}">
-        <td th:text="${row.getIdSong()}"></td>
-        <td th:text="${row.getNameSong()}"></td>
-        <td th:text="${row.getArtist()}"></td>
-        <td th:text="${row.getType()}"></td>
-        <td th:text="${row.getLink()}"></td>
-        <td><a th:href="@{/musics/{id}/edit(id=${row.getIdSong()})}">Edit</a></td>
-        <td><a th:href="@{/musics/{id}/delete(id=${row.getIdSong()})}">Delete</a></td>
+    <tr th:each="music : ${listMusic}">
+        <td th:text="${music.idSong}"></td>
+        <td th:text="${music.nameSong}"></td>
+        <td th:text="${music.artist}"></td>
+        <td th:text="${music.type}"></td>
+<!--        <td th:text="${row.getLink()}"></td>-->
+        <td>
+            <audio controls>
+                <source th:src="@{'/musics/' + ${music.link}}">
+            </audio>
+        </td>
+        <td><a th:href="@{/musics/{id}/edit(id=${music.idSong})}">Edit</a></td>
+        <td><a th:href="@{/musics/{id}/delete(id=${music.idSong})}">Delete</a></td>
     </tr>
     </tbody>
 </table>

@@ -6,7 +6,8 @@
 </head>
 <body>
 <div id="form">
-    <form th:action="@{/musics/save}" th:object="${music}" method="post" novalidate="novalidate">
+    <form th:action="@{/musics/save}" th:object="${music}"
+          method="post" novalidate="novalidate">
         <input type="hidden" th:field="*{idSong}">
         <div>
             <label>Name Song</label>
@@ -22,7 +23,7 @@
         </div>
         <div>
             <label>Link</label>
-            <input type="text" th:field="*{link}">
+            <input type="file" th:field="*{link}">
         </div>
         <input type="submit" value="Save">
     </form>
