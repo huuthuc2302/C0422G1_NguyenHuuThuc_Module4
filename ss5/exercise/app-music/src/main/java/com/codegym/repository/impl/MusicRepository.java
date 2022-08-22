@@ -5,14 +5,17 @@ import com.codegym.repository.IMusicRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityTransaction;
+import javax.persistence.TypedQuery;
 import java.util.List;
 
 @Repository
 public class MusicRepository implements IMusicRepository {
     @Override
-    public List<Music> getAll() {
-        List<Music> musicList = BaseRepository.entityManager.createQuery("select s from music s", Music.class).getResultList();
-        return musicList;
+    public List<Music> getAll(String name) {
+        TypedQuery<Music> typedQuery = BaseRepository.entityManager.
+                createQuery("select s from music s where s.nameSong like :name", Music.class);
+        typedQuery.setParameter("name", "%" + name + "%");
+        return typedQuery.getResultList();
     }
 
     @Override
@@ -43,14 +46,6 @@ public class MusicRepository implements IMusicRepository {
         entityTransaction.begin();
         BaseRepository.entityManager.remove(findById(music.getIdSong()));
         entityTransaction.commit();
-    }
-
-    @Override
-    public List<Music> searchByName(Music music) {
-        List<Music> searchList = BaseRepository.entityManager.
-                createQuery("select s from music s where s.nameSong like ?1", Music.class).
-                setParameter(1, "%" + music.getNameSong() + "%").getResultList();
-        return searchList;
     }
 
 }

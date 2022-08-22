@@ -6,8 +6,8 @@
 </head>
 <body>
 <h3>List Music</h3>
-<form th:action="@{/musics/search}" th:object="${music}" method="get" novalidate="novalidate">
-    <input type="text" th:field="*{nameSong}">
+<form th:action="@{/musics}" th:object="${listMusic}" method="get" novalidate="novalidate">
+    <input type="text" name="music">
     <input type="submit" value="Search">
 </form>
 <p>

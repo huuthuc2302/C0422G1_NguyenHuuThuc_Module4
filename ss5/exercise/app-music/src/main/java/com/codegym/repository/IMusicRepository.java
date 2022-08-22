@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IMusicRepository {
 
-    List<Music> getAll();
+    List<Music> getAll(String name);
 
     void save(Music music);
 
@@ -15,7 +15,5 @@ public interface IMusicRepository {
     void update(Music music);
 
     void remove(Music music);
-
-    List<Music> searchByName(Music music);
 
 }

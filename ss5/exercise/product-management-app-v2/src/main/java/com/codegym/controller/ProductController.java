@@ -18,11 +18,9 @@ public class ProductController {
     private IProductService iProductService;
 
     @GetMapping("")
-    public String index(Model model) {
-
-        List<Product> productList = iProductService.findAll();
+    public String index(@RequestParam(required = false,defaultValue = "") String product, Model model) {
+        List<Product> productList = iProductService.findAll(product);
         model.addAttribute("listProduct", productList);
-        model.addAttribute("product", new Product());
         return "/index";
     }
 
@@ -68,17 +66,5 @@ public class ProductController {
         model.addAttribute("product", iProductService.findById(id));
         return "/view";
     }
-
-    @GetMapping("/search")
-    public String search(Product product, Model model) {
-        model.addAttribute("listProduct", iProductService.searchProductByName(product));
-        return "/index";
-    }
-
-
-
-
-
-
 
 }

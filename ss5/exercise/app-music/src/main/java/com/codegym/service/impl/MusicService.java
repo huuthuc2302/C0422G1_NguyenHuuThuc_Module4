@@ -15,8 +15,8 @@ public class MusicService implements IMusicService {
     private IMusicRepository iMusicRepository;
 
     @Override
-    public List<Music> getAll() {
-        return iMusicRepository.getAll();
+    public List<Music> getAll(String name) {
+        return iMusicRepository.getAll(name);
     }
 
     @Override
@@ -39,8 +39,4 @@ public class MusicService implements IMusicService {
         iMusicRepository.remove(music);
     }
 
-    @Override
-    public List<Music> searchByName(Music music) {
-        return iMusicRepository.searchByName(music);
-    }
 }

@@ -14,16 +14,14 @@ public class ProductService implements IProductService {
     @Autowired
     private IProductRepository iProductRepository;
 
-
     @Override
-    public List<Product> findAll() {
-        return null;
+    public List<Product> findAll(String name) {
+        return iProductRepository.findAll(name);
     }
 
     @Override
     public void save(Product product) {
         iProductRepository.save(product);
-
     }
 
     @Override
@@ -41,8 +39,4 @@ public class ProductService implements IProductService {
         iProductRepository.remove(product);
     }
 
-    @Override
-    public List<Product> searchProductByName(Product product) {
-        return iProductRepository.searchProductByName(product);
-    }
 }

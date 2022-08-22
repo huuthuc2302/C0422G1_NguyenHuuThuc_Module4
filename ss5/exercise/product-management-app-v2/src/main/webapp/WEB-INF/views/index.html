@@ -6,8 +6,8 @@
 </head>
 <body>
 <h3>List Product</h3>
-<form th:action="/products/search" th:object="${product}" method="get" novalidate="novalidate">
-    <input type="text" th:field="*{name}">
+<form th:action="/products" th:object="${listProduct}" method="get" novalidate="novalidate">
+    <input type="text" name="product">
     <input type="submit" value="Search">
 </form>
 <p>
