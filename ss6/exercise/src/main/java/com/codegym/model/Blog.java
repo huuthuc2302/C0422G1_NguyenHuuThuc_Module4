@@ -9,7 +9,7 @@ public class Blog {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String title;
-    @Column(name = "name_Author")
+    @Column(name = "name_author")
     private String nameAuthor;
     private String content;
 
