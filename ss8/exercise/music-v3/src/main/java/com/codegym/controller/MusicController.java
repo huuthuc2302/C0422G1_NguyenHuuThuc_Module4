@@ -58,7 +58,13 @@ public class MusicController {
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute Music music) {
+    public String update(@ModelAttribute Music music, @Valid MusicDto musicDto,
+                         BindingResult bindingResult) {
+        new MusicDto().validate(musicDto, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "edit";
+        }
         iMusicService.save(music);
         return "redirect:/musics";
     }
