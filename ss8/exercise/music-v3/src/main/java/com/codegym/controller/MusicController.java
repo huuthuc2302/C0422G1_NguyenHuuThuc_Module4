@@ -53,26 +53,13 @@ public class MusicController {
 
     @GetMapping("/edit")
     public String edit(@RequestParam Integer id, Model model) {
-        model.addAttribute("music", iMusicService.findById(id));
+        model.addAttribute("musicDto", iMusicService.findById(id));
         return "/edit";
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute @Valid MusicDto musicDto,
-                      BindingResult bindingResult,
-                      RedirectAttributes redirectAttributes) {
-
-        new MusicDto().validate(musicDto, bindingResult);
-
-        if (bindingResult.hasErrors()) {
-            return "edit";
-        }
-
-        Music music = new Music();
-        BeanUtils.copyProperties(musicDto, music);
+    public String update(@ModelAttribute Music music) {
         iMusicService.save(music);
-        redirectAttributes.addFlashAttribute("msg",
-                "Register successfully!");
         return "redirect:/musics";
     }
 }
