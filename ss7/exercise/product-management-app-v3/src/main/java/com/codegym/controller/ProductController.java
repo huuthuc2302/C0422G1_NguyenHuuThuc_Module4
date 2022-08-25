@@ -21,7 +21,7 @@ public class ProductController {
 
     @GetMapping("")
     public String index(Model model,
-                        @PageableDefault(size = 2, sort = "id", direction = Sort.Direction.DESC) Pageable pageable,
+                        @PageableDefault(size = 2, sort = "idProduct", direction = Sort.Direction.DESC) Pageable pageable,
                         @RequestParam Optional<String> keyword) {
         String keywordVal = keyword.orElse("");
 
