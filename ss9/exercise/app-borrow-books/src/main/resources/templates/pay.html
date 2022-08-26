@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pay Book</title>
+</head>
+<body>
+<h1>PAY BOOK</h1>
+<p>
+    <a th:href="@{/books}">
+        Back to book list
+    </a>
+</p>
+<p th:text="${msg}"></p>
+
+<form th:action="@{/books/pay}" method="post">
+    <div>
+        <label>Pay Book</label>
+        <input type="number">
+    </div>
+    <div>
+        <input type="submit" value="Pay"/>
+    </div>
+</form>
+</body>
+</html>

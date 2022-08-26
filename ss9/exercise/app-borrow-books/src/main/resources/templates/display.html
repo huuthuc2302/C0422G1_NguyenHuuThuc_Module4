@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Book</title>
+</head>
+<body>
+<h3>LIST BOOK</h3>
+<table>
+    <thead>
+    <tr>
+        <th>Id Book</th>
+        <th>Name Book</th>
+        <th>Quantity</th>
+        <th>Detail</th>
+        <th>Total</th>
+        <th>Pay</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="book : ${listBook}">
+        <td th:text="${book.idBook}"></td>
+        <td th:text="${book.nameBook}"></td>
+        <td th:text="${book.quantity}"></td>
+        <td th:text="${book.total}"></td>
+        <td><a th:href="@{/books/detail(id=${book.idBook})}">Detail</a></td>
+        <td><a th:href="@{/books/pay(id=${book.idBook})}">Pay</a></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
