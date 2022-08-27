@@ -2,12 +2,55 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>THÊM MỚI KHÁCH HÀNG</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
+<div class="container w-50 mt-5 p-2 bg-success" style="border: 1px solid grey; border-radius: 15px">
+    <h3 align="center">THÊM MỚI KHÁCH HÀNG</h3>
 
+    <form class="row g-3 text-center" th:action="@{/customers/add}" th:object="${customer}"
+          method="post" novalidate="novalidate">
 
+        <div class="col-md-12">
+            <label for="name" class="form-label">Họ tên</label>
+            <input type="text" class="form-control" id="name" th:field="*{customerName}"/>
+        </div>
+
+        <div class="col-md-12">
+            <label for="birthday" class="form-label">Ngày sinh</label>
+            <input type="date" class="form-control" id="birthday" th:field="*{customerBirth}"/>
+        </div>
+
+        <div class="col-md-12">
+            <label for="gender" class="form-label">Giới tính</label>
+            <input type="text" class="form-control" id="gender" th:field="*{customerGender}"/>
+        </div>
+
+        <div class="col-md-12">
+            <label for="id_card" class="form-label">Số CMND</label>
+            <input type="text" class="form-control" id="id_card" th:field="*{customerIdCard}"/>
+        </div>
+
+        <div class="col-md-12">
+            <label for="phone" class="form-label">Số Điện Thoại</label>
+            <input type="text" class="form-control" id="phone" th:field="*{customerPhone}"/>
+        </div>
+        <div class="col-md-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" id="email" th:field="*{customerEmail}"/>
+        </div>
+        <div class="col-md-12">
+            <label for="address" class="form-label">Địa chỉ</label>
+            <input type="text" class="form-control" id="address" th:field="*{customerAddress}"/>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Xác nhận</button>
+        </div>
+
+    </form>
+</div>
 <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

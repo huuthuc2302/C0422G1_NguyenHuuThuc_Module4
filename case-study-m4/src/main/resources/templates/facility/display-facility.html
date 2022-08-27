@@ -2,10 +2,118 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>QUẢN LÝ DỊCH VỤ</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
+<center>
+    <h1>QUẢN LÝ DỊCH VỤ</h1>
+    <h3>
+        <a class="btn btn-outline-primary" th:href="@{/facility/add}">Thêm mới dịch vụ</a>
+    </h3>
+</center>
+
+<body>
+
+<div class="container ">
+    <div class="row">
+        <table class="table table-striped">
+            <tr>
+                <th>Mã dịch vụ</th>
+                <th>Tên dịch vụ</th>
+                <th>Diện tích sử dụng</th>
+                <th>Chi phí thuê</th>
+                <th>Số người tối đa</th>
+                <th>Mã kiểu thuê</th>
+                <th>Mã loại dịch vụ</th>
+                <th>Tiêu chuẩn phòng</th>
+                <th>Mô tả tiện nghi</th>
+                <th>Diện tích hồ bơi</th>
+                <th>Số tầng</th>
+                <th>Dịch vụ Free đi kèm</th>
+                <th colspan="2">Chức năng</th>
+            </tr>
+            <tr th:each="facility : ${listFacility}">
+                <td th:text="${facility.facilityId}"></td>
+                <td th:text="${facility.facilityName}"></td>
+                <td th:text="${facility.facilityArea}"></td>
+                <td th:text="${facility.facilityCost}"></td>
+                <td th:text="${facility.facilityMaxPeople}"></td>
+                <td th:text="${facility.rentTypeId}"></td>
+                <td th:text="${facility.standardRoom}"></td>
+                <td th:text="${facility.description}"></td>
+                <td th:text="${facility.poolArea}"></td>
+                <td th:text="${facility.numberOfFloor}"></td>
+                <td th:text="${facility.facilityFree}"></td>
+                <td>
+                    <a type="button" class="btn btn-primary"
+                       th:href="@{/facility/edit(id=${facility.facilityId})}">
+                        Sửa
+                    </a></td>
+                </td>
+                <td>
+                    <button type="button" onclick="showInfoDelete(this.value)"
+                            th:value="${facility.facilityId} + ',' + ${facility.facilityName}"
+                            class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Xoá
+                    </button>
+                </td>
+            </tr>
+        </table>
+
+        <!-- Modal -->
+        <form th:action="@{/facility/delete}" method="post">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <input hidden type="text" name="facilityId" id="deleteId">
+                            <span>Bạn có muốn xóa : </span><span id="deleteName"></span>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            <button type="submit" class="btn btn-primary">Xoá</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <script>
+            function showInfoDelete(name) {
+                let arr = name.split(",")
+                document.getElementById("deleteId").value = arr[0];
+                document.getElementById("deleteName").innerText = arr[1];
+            }
+        </script>
+    </div>
+</div>
+
+<div>
+    <div>
+        <div>
+            <a th:href="@{/facility(page=${listFacility.number - 1},
+            keyword = ${keywordVal})}"
+               th:if="${listFacility.hasPrevious()}" class="btn btn-success">
+                Previous
+            </a>
+            <span class="btn btn-primary">
+            <b th:text="${listFacility.number + 1}"></b>
+            /
+            <b th:text="${listFacility.totalPages}"></b>
+                </span>
+            <a th:href="@{/facility(page=${listFacility.number + 1},
+            keyword = ${keywordVal})}"
+               th:if="${listFacility.hasNext()}" class="btn btn-success">
+                Next
+            </a>
+        </div>
+    </div>
+</div>
 
 
 <script src="/js/bootstrap.min.js"></script>

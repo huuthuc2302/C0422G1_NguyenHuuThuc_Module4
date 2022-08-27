@@ -2,11 +2,70 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Thêm mới dịch vụ</title>
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 <body>
+<div class="container w-50 mt-5 p-2 bg-success" style="border: 1px solid grey; border-radius: 15px">
+    <h3 align="center">THÊM MỚI DỊCH VỤ</h3>
 
+    <form class="row g-3 text-center" th:action="@{/facility/add}" th:object="${facility}"
+          method="post" novalidate="novalidate">
+
+        <div class="col-md-12">
+            <label for="name" class="form-label">Tên dịch vụ</label>
+            <input type="text" class="form-control" id="name" th:field="*{facilityName}"/>
+        </div>
+
+        <div class="col-md-12">
+            <label for="area" class="form-label">Diện tích sử dụng</label>
+            <input type="text" class="form-control" id="area" th:field="*{facilityArea}"/>
+        </div>
+
+        <div class="col-md-12">
+            <label for="cost" class="form-label">Chi phí thuê</label>
+            <input type="text" class="form-control" id="cost" th:field="*{facilityCost}"/>
+        </div>
+
+        <div class="col-md-12">
+            <label for="people" class="form-label">Số người tối đa</label>
+            <input type="text" class="form-control" id="people" th:field="*{facilityMaxPeople}"/>
+        </div>
+
+        <div class="col-md-12">
+            <label for="phone" class="form-label">Mã kiểu thuê</label>
+            <input type="text" class="form-control" id="phone" th:field="*{rentTypeId}"/>
+        </div>
+        <div class="col-md-12">
+            <label for="rent_type" class="form-label">Mã loại dịch vụ</label>
+            <input type="text" class="form-control" id="rent_type" th:field="*{facilityTypeId}"/>
+        </div>
+        <div class="col-md-12">
+            <label for="room" class="form-label">Tiêu chuẩn phòng</label>
+            <input type="text" class="form-control" id="room" th:field="*{standardRoom}"/>
+        </div>
+        <div class="col-md-12">
+            <label for="description" class="form-label">Mô tả tiện nghi</label>
+            <input type="text" class="form-control" id="description" th:field="*{description}"/>
+        </div>
+        <div class="col-md-12">
+            <label for="pool_area" class="form-label">Diện tích hồ bơi</label>
+            <input type="text" class="form-control" id="pool_area" th:field="*{poolArea}"/>
+        </div>
+        <div class="col-md-12">
+            <label for="floor" class="form-label">Số tầng</label>
+            <input type="text" class="form-control" id="floor" th:field="*{numberOfFloor}"/>
+        </div>
+        <div class="col-md-12">
+            <label for="free" class="form-label">Dịch vụ Free đi kèm</label>
+            <input type="text" class="form-control" id="free" th:field="*{facilityFree}"/>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Xác nhận</button>
+        </div>
+    </form>
+</div>
 
 <script src="/js/bootstrap.min.js"></script>
 </body>

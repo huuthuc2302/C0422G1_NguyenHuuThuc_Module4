@@ -8,25 +8,25 @@ public class Facility {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_dich_vu")
-    private int facilityId;
+    private Integer facilityId;
 
     @Column(name = "ten_dich_vu")
     private String facilityName;
 
     @Column(name = "dien_tich")
-    private int facilityArea;
+    private Integer facilityArea;
 
     @Column(name = "chi_phi_thue")
-    private double facilityCost;
+    private Double facilityCost;
 
     @Column(name = "so_nguoi_toi_da ")
-    private int facilityMaxPeople;
+    private Integer facilityMaxPeople;
 
     @Column(name = "ma_kieu_thue")
-    private int rentTypeId;
+    private Integer rentTypeId;
 
     @Column(name = "ma_loai_dich_vu")
-    private int facilityTypeId;
+    private Integer facilityTypeId;
 
     @Column(name = "tieu_chuan_phong")
     private String standardRoom;
@@ -35,10 +35,10 @@ public class Facility {
     private String description;
 
     @Column(name = "dien_tich_ho_boi")
-    private double poolArea;
+    private Double poolArea;
 
     @Column(name = "so_tang")
-    private int numberOfFloor;
+    private Integer numberOfFloor;
 
     @Column(name = "dich_vu_mien_phi_di_kem")
     private String facilityFree ;
@@ -46,9 +46,7 @@ public class Facility {
     public Facility() {
     }
 
-    public Facility(int facilityId, String facilityName, int facilityArea, double facilityCost, int facilityMaxPeople,
-                    int rentTypeId, int facilityTypeId, String standardRoom, String description, double poolArea,
-                    int numberOfFloor, String facilityFree) {
+    public Facility(Integer facilityId, String facilityName, Integer facilityArea, Double facilityCost, Integer facilityMaxPeople, Integer rentTypeId, Integer facilityTypeId, String standardRoom, String description, Double poolArea, Integer numberOfFloor, String facilityFree) {
         this.facilityId = facilityId;
         this.facilityName = facilityName;
         this.facilityArea = facilityArea;
@@ -63,11 +61,11 @@ public class Facility {
         this.facilityFree = facilityFree;
     }
 
-    public int getFacilityId() {
+    public Integer getFacilityId() {
         return facilityId;
     }
 
-    public void setFacilityId(int facilityId) {
+    public void setFacilityId(Integer facilityId) {
         this.facilityId = facilityId;
     }
 
@@ -79,43 +77,43 @@ public class Facility {
         this.facilityName = facilityName;
     }
 
-    public int getFacilityArea() {
+    public Integer getFacilityArea() {
         return facilityArea;
     }
 
-    public void setFacilityArea(int facilityArea) {
+    public void setFacilityArea(Integer facilityArea) {
         this.facilityArea = facilityArea;
     }
 
-    public double getFacilityCost() {
+    public Double getFacilityCost() {
         return facilityCost;
     }
 
-    public void setFacilityCost(double facilityCost) {
+    public void setFacilityCost(Double facilityCost) {
         this.facilityCost = facilityCost;
     }
 
-    public int getFacilityMaxPeople() {
+    public Integer getFacilityMaxPeople() {
         return facilityMaxPeople;
     }
 
-    public void setFacilityMaxPeople(int facilityMaxPeople) {
+    public void setFacilityMaxPeople(Integer facilityMaxPeople) {
         this.facilityMaxPeople = facilityMaxPeople;
     }
 
-    public int getRentTypeId() {
+    public Integer getRentTypeId() {
         return rentTypeId;
     }
 
-    public void setRentTypeId(int rentTypeId) {
+    public void setRentTypeId(Integer rentTypeId) {
         this.rentTypeId = rentTypeId;
     }
 
-    public int getFacilityTypeId() {
+    public Integer getFacilityTypeId() {
         return facilityTypeId;
     }
 
-    public void setFacilityTypeId(int facilityTypeId) {
+    public void setFacilityTypeId(Integer facilityTypeId) {
         this.facilityTypeId = facilityTypeId;
     }
 
@@ -135,19 +133,19 @@ public class Facility {
         this.description = description;
     }
 
-    public double getPoolArea() {
+    public Double getPoolArea() {
         return poolArea;
     }
 
-    public void setPoolArea(double poolArea) {
+    public void setPoolArea(Double poolArea) {
         this.poolArea = poolArea;
     }
 
-    public int getNumberOfFloor() {
+    public Integer getNumberOfFloor() {
         return numberOfFloor;
     }
 
-    public void setNumberOfFloor(int numberOfFloor) {
+    public void setNumberOfFloor(Integer numberOfFloor) {
         this.numberOfFloor = numberOfFloor;
     }
 
