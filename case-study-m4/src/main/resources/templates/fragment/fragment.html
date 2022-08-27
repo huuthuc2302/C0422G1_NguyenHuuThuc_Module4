@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div th:fragment="navbar">
+    <nav class="navbar navbar-light bg-light">
+        <img class="ms-5" src="https://furamavietnam.com/wp-content/uploads/2018/08/logo@2x.png" alt="" width="60" height="80">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+
+            </a>
+            <span>Nguyễn Hữu Thức</span>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-success sticky-top">
+        <div class="container-fluid ">
+            <a class="navbar-brand font-weight-bold text-white" href="#">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+                    <li class="nav-item">
+                        <a class="nav-link  font-weight-bold text-white" href="/templates/employee?action=default">Employee</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold text-white " href="/templates/customer?action=default">Customer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold text-white" href="/templates/facility?action=default">Facility</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link font-weight-bold text-white" href="">Contract</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light border-3" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<footer th:fragment="footer" class="bg-success text-center text-lg-start mt-5">
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        <a class="nav-link font-weight-bold text-white">
+            © 2018 Furama Resort Danang.
+        </a>
+    </div>
+</footer>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
