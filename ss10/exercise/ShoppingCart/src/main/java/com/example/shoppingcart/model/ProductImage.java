@@ -21,6 +21,12 @@ public class ProductImage {
 
     }
 
+    public ProductImage(Long id, String linkImage, Product product) {
+        this.id = id;
+        this.linkImage = linkImage;
+        this.product = product;
+    }
+
     public Long getId() {
         return id;
     }

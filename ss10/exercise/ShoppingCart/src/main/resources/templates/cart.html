@@ -9,7 +9,7 @@
 <p>
     <a href="/shop" class="btn btn-outline-success">Shop</a>
 </p>
-<h1>Your Cart</h1>
+<h1>THÔNG TIN ĐƠN HÀNG</h1>
 <form th:action="@{/shop}" th:object="${cart}" method="post">
     <h3>Total Items: <span th:text="${countItemQuantity}"></span></h3>
     <h3>Total Products: <span th:text="${countProductQuantity}"></span></h3>
@@ -45,7 +45,7 @@
                         th:attr="onclick=|showPay('${countTotalPayment}')|"
                         data-bs-toggle="modal"
                         data-bs-target="#payModal">
-                    Pay
+                    TIẾN HÀNH THANH TOÁN
                 </button>
             </td>
             <td></td>
