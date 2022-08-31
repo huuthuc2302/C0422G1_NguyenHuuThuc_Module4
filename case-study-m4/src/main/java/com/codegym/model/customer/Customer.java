@@ -1,4 +1,4 @@
-package com.codegym.model.Customer;
+package com.codegym.model.customer;
 
 import javax.persistence.*;
 
@@ -9,9 +9,6 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_khach_hang")
     private int customerId;
-
-    @Column(name = "ma_loai_khach")
-    private int customerTypeId;
 
     @Column(name = "ho_ten")
     private String customerName;
@@ -34,13 +31,17 @@ public class Customer {
     @Column(name = "dia_chi")
     private String customerAddress;
 
+    @ManyToOne
+    @JoinColumn(name = "ma_loai_khach", referencedColumnName = "ma_loai_khach")
+    private CustomerType customerType;
+
     public Customer() {
     }
 
-    public Customer(int customerId, int customerTypeId, String customerName, String customerBirth, int customerGender,
-                    String customerIdCard, String customerPhone, String customerEmail, String customerAddress) {
+    public Customer(int customerId, String customerName, String customerBirth, int customerGender,
+                    String customerIdCard, String customerPhone, String customerEmail,
+                    String customerAddress, CustomerType customerType) {
         this.customerId = customerId;
-        this.customerTypeId = customerTypeId;
         this.customerName = customerName;
         this.customerBirth = customerBirth;
         this.customerGender = customerGender;
@@ -48,6 +49,7 @@ public class Customer {
         this.customerPhone = customerPhone;
         this.customerEmail = customerEmail;
         this.customerAddress = customerAddress;
+        this.customerType = customerType;
     }
 
     public int getCustomerId() {
@@ -56,14 +58,6 @@ public class Customer {
 
     public void setCustomerId(int customerId) {
         this.customerId = customerId;
-    }
-
-    public int getCustomerTypeId() {
-        return customerTypeId;
-    }
-
-    public void setCustomerTypeId(int customerTypeId) {
-        this.customerTypeId = customerTypeId;
     }
 
     public String getCustomerName() {
@@ -120,5 +114,13 @@ public class Customer {
 
     public void setCustomerAddress(String customerAddress) {
         this.customerAddress = customerAddress;
+    }
+
+    public CustomerType getCustomerType() {
+        return customerType;
+    }
+
+    public void setCustomerType(CustomerType customerType) {
+        this.customerType = customerType;
     }
 }

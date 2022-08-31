@@ -13,6 +13,13 @@
           method="post" novalidate="novalidate">
 
         <div class="col-md-12">
+            <label class="form-label">Loại khách</label>
+            <select class="form-select" aria-label="Default select example" th:field="*{customerType}">
+                <option th:each="item : ${customerTypeList}" th:text="${item.customerTypeName}" th:value="${item.customerTypeId}">One</option>
+            </select>
+        </div>
+
+        <div class="col-md-12">
             <label for="name" class="form-label">Họ tên</label>
             <input type="text" class="form-control" id="name" th:field="*{customerName}"/>
         </div>
@@ -23,8 +30,11 @@
         </div>
 
         <div class="col-md-12">
-            <label for="gender" class="form-label">Giới tính</label>
-            <input type="text" class="form-control" id="gender" th:field="*{customerGender}"/>
+            <label for="gender" class="form-label">Giới tính </label>
+            <select class="form-select" id="gender" th:field="*{customerGender}">
+                <option value="0">Nam</option>
+                <option value="1">Nữ</option>
+            </select>
         </div>
 
         <div class="col-md-12">

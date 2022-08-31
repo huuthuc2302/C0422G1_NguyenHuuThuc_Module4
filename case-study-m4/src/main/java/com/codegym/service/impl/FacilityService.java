@@ -1,6 +1,6 @@
 package com.codegym.service.impl;
 
-import com.codegym.model.Facility;
+import com.codegym.model.facility.Facility;
 import com.codegym.repository.IFacilityRepository;
 import com.codegym.service.IFacilityService;
 import org.springframework.beans.factory.annotation.Autowired;

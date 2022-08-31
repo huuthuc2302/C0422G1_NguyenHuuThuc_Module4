@@ -1,7 +1,9 @@
 package com.codegym.controller;
 
-import com.codegym.model.Customer;
+import com.codegym.model.customer.Customer;
+import com.codegym.model.customer.CustomerType;
 import com.codegym.service.ICustomerService;
+import com.codegym.service.ICustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -19,9 +22,18 @@ public class CustomerController {
     @Autowired
     private ICustomerService iCustomerService;
 
+    @Autowired
+    private ICustomerTypeService iCustomerTypeService;
+
+    @ModelAttribute
+    public List<CustomerType> customerTypeList(){
+
+        return iCustomerTypeService.findAll();
+    }
+
     @GetMapping("")
     public String index(Model model,
-                        @PageableDefault(size = 2, sort = "customerId", direction = Sort.Direction.DESC) Pageable pageable,
+                        @PageableDefault(size = 5, sort = "customerId", direction = Sort.Direction.DESC) Pageable pageable,
                         @RequestParam Optional<String> keyword) {
         String keywordVal = keyword.orElse("");
 
@@ -52,7 +64,7 @@ public class CustomerController {
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute Customer customer) {
+    public String update(@ModelAttribute("customer") Customer customer) {
         iCustomerService.save(customer);
         return "redirect:/customers";
     }
