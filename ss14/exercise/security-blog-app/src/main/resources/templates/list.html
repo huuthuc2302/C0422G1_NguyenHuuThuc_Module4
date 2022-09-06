@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>List Blogs</h3>
+<input id="inputSearch" type="text">
+<input type="button" id="btnSearch" value="Search">
+
+<table id="products">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name BLog</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Date Create</th>
+        <th>Category</th>
+        <th>Edit</th>
+        <th>Delete</th>
+        <th>View</th>
+    </tr>
+    </thead>
+    <tbody id="bodyTable">
+    <tr th:each="row: ${blogList}">
+        <td th:text="${row.getIdBlog()}"></td>
+        <td th:text="${row.getNameBlog()}"></td>
+        <td th:text="${row.getAuthor()}"></td>
+        <td th:text="${row.getDescription()}"></td>
+        <td th:text="${row.getDateCreate()}"></td>
+        <td th:text="${row.category.nameCategory}"></td>
+        <td><a th:href="@{/blogs/{id}/edit(id=${row.getIdBlog()})}">Edit</a></td>
+        <td><a th:href="@{/blogs/{id}/delete(id=${row.getIdBlog()})}">Delete</a></td>
+        <td><a th:href="@{/blogs/{id}/view(id=${row.getIdBlog()})}">View</a></td>
+    </tr>
+    <button id="btnLoad">Load</button>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+<script src="/jquery_ajax/jquery-3.6.0.min.js"></script>
+<script>
+    //Search
+    $(document).ready(function () {
+        $('#btnSearch').click(function () {
+            let search = document.getElementById("inputSearch").value;
+            $.ajax({
+                type: "GET",
+                url: `/blogs/search/${search}`,
+                success: function (data) {
+                    console.log(data);
+                    let content = "";
+                    for (let i = 0; i < data.content.length; i++) {
+                        content += loadDataTable(data.content[i]);
+                    }
+                    document.getElementById("bodyTable").innerHTML = content;
+                }
+            })
+        })
+    })
+
+    //Load
+    let number = 2;
+    let check = "";
+    $(document).ready(function () {
+        $('#btnLoad').click(function () {
+            number = number + 1;
+            $.ajax({
+                type: "GET",
+                url: `/blogs/load/${number}`,
+                success: function (data) {
+                    console.log(data);
+                    let content = "";
+                    for (let i = 0; i < data.content.length; i++) {
+                        content += loadDataTable(data.content[i]);
+                    }
+                    if (content !== check){
+                        check = content;
+                        document.getElementById("bodyTable").innerHTML = content;
+                    }else {
+                        document.getElementById("btnLoad").disabled = true;
+                    }
+                }
+            })
+        })
+    })
+
+    function loadDataTable(items) {
+        return '    <tr>' +
+            '        <td>' + items.idBlog + '</td>' +
+            '        <td>' + items.nameBlog + '</td>' +
+            '        <td>' + items.author + '</td>' +
+            '        <td>' + items.description + '</td>' +
+            '        <td>' + items.dateCreate + '</td>' +
+            '        <td>' + items.category.nameCategory + '</td>' +
+            '        <td><a href="/blogs/' + items.idBlog + '/edit">Edit</a></td>\n' +
+            '        <td><a href="/blogs/' + items.idBlog + '/delete">Delete</a></td>\n' +
+            '        <td><a href="/blogs/' + items.idBlog + '/view">View</a></td>\n' +
+            '    </tr>';
+    }
+</script>
+
+</body>
+</html>
