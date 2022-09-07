@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0fd972c1-debb-4008-afab-eb9387d092c7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/controller/FacilityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/controller/FacilityController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/model/facility/Facility.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/model/facility/Facility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/model/facility/FacilityType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/model/facility/FacilityType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/model/facility/RentType.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/model/facility/RentType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/repository/IFacilityTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/repository/IFacilityTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/repository/IRentTypeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/repository/IRentTypeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/service/IFacilityTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/service/IFacilityTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/service/IRentTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/service/IRentTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/service/impl/FacilityTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/service/impl/FacilityTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/service/impl/RentTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/java/com/codegym/service/impl/RentTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/resources/templates/facility/create-facility.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/resources/templates/facility/create-facility.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../case-study-m4/src/main/resources/templates/facility/display-facility.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../case-study-m4/src/main/resources/templates/facility/display-facility.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss1/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss1/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss12/practice/manager-phone/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss12/practice/manager-phone/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss12/practice/manager-phone/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss12/practice/manager-phone/update.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/controller/SmartphoneController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/controller/SmartphoneController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/model/Smartphone.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/model/Smartphone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/repository/ISmartphoneRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/repository/ISmartphoneRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/service/ISmartphoneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/service/ISmartphoneService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/service/impl/SmartphoneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss12/practice/phone-manager/src/main/java/com/codegym/service/impl/SmartphoneService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss2/exercise/display-spice-sandwich/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2/exercise/display-spice-sandwich/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss2/practice/customer-management" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss2/practice/customer-management" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/build/classes/java/main/com/codegym/controller/MusicController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/build/classes/java/main/com/codegym/controller/MusicController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/build/libs/app-music-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/build/libs/app-music-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/app-music/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/app-music/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/product-management-app-v2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/product-management-app-v2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/product-management-app-v2/src/main/webapp/WEB-INF/views/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/product-management-app-v2/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/product-management-app-v2/src/main/webapp/WEB-INF/views/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/product-management-app-v2/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss5/exercise/product-management-app-v2/src/main/webapp/WEB-INF/views/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss5/exercise/product-management-app-v2/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6/exercise/src/main/java/com/codegym/BlogAppApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6/exercise/src/main/java/com/codegym/controller/BlogController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6/exercise/src/main/java/com/codegym/model/Blog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6/exercise/src/main/java/com/codegym/repository/IBlogRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6/exercise/src/main/java/com/codegym/service/IBlogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss6/exercise/src/main/java/com/codegym/service/impl/BlogService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/app-music-v2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/app-music-v2/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/app-music-v2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/app-music-v2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/app-music-v2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/app-music-v2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/config/AppConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/config/AppConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/config/AppInitializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/config/AppInitializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/repository/IProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/repository/impl/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/repository/impl/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/java/com/codegym/service/impl/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/resources/hibernate.conf.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/resources/hibernate.conf.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/resources/upload_file.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/resources/upload_file.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/view.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss999/product-v2/src/main/webapp/WEB-INF/views/view.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss999/product_app/.idea/workspace.xml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="2ENasawQIMm7CkmKpSSg79Byslp" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../ss15/exercise/blog_authentic" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\C0422G1_NguyenHuuThuc_module4\C0422G1_NguyenHuuThuc_Module4\ss14\exercise\security-blog-app\src\main\resources\templates" />
+      <recent name="E:\C0422G1_NguyenHuuThuc_module4\C0422G1_NguyenHuuThuc_Module4\ss14\exercise\security-blog-app\src\main\resources\static" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SecurityBlogAppApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="security-blog-app.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.codegym.SecurityBlogAppApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0fd972c1-debb-4008-afab-eb9387d092c7" name="Changes" comment="" />
+      <created>1662438704169</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662438704169</updated>
+      <workItem from="1662438706568" duration="20590000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
