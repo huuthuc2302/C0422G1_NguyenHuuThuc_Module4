@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>DANH SÁCH BLOG</title>
+</head>
+<body>
+<h2>DANH SÁCH BLOG</h2>
+
+<a href="/create">Thêm mới blog</a>
+
+<!--<form action="/search" method="get" id="formSearch">-->
+<!--    <select name="categoryId" onchange="displayByCategory()">-->
+<!--        <option value="">Chọn</option>-->
+<!--        <option th:each="c : ${category}" th:value="${c.nameOfCategory}" th:text="${c.nameOfCategory}"></option>-->
+<!--    </select>-->
+<!--    <button type="submit">Search</button>-->
+<!--</form>-->
+
+<table>
+    <tr>
+        <th>STT</th>
+        <th>Tên tác phẩm</th>
+        <th>Tên thể loại</th>
+        <th th:if="${a.equals('ADMIN')}">Xoá</th>
+        <th th:if="${a.equals('ADMIN')}">Sửa</th>
+        <th>Chi tiết</th>
+    </tr>
+    <tr th:each="blog, loop : ${blogList}">
+        <td th:text="${loop.count}"></td>
+        <td th:text="${blog.tittle}"></td>
+        <td th:text="${blog.categoryBlog.nameOfCategory}"></td>
+        <td th:if="${a.equals('ADMIN')}"><a th:href="@{delete(id=${blog.id})}">Xoá</a></td>
+        <td th:if="${a.equals('ADMIN')}"><a th:href="@{update(id=${blog.id})}">Sửa</a></td>
+        <td><a th:href="@{detail(id=${blog.id})}">Chi tiết</a></td>
+    </tr>
+</table>
+<script>
+function displayByCategory() {
+    document.getElementById("formSearch").submit();
+}
+</script>
+</body>
+</html>
