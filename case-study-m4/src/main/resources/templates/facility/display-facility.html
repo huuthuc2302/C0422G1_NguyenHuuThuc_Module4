@@ -13,8 +13,6 @@
     </h3>
 </center>
 
-<body>
-
 <div class="container ">
     <div class="row">
         <table class="table table-striped">
@@ -24,8 +22,8 @@
                 <th>Diện tích sử dụng</th>
                 <th>Chi phí thuê</th>
                 <th>Số người tối đa</th>
-                <th>Mã kiểu thuê</th>
-                <th>Mã loại dịch vụ</th>
+                <th>Kiểu thuê</th>
+                <th>Loại dịch vụ</th>
                 <th>Tiêu chuẩn phòng</th>
                 <th>Mô tả tiện nghi</th>
                 <th>Diện tích hồ bơi</th>
@@ -39,7 +37,8 @@
                 <td th:text="${facility.facilityArea}"></td>
                 <td th:text="${facility.facilityCost}"></td>
                 <td th:text="${facility.facilityMaxPeople}"></td>
-                <td th:text="${facility.rentTypeId}"></td>
+                <td th:text="${facility.rentType.rentTypeName}"></td>
+                <td th:text="${facility.facilityType.facilityTypeName}"></td>
                 <td th:text="${facility.standardRoom}"></td>
                 <td th:text="${facility.description}"></td>
                 <td th:text="${facility.poolArea}"></td>
@@ -53,7 +52,7 @@
                 </td>
                 <td>
                     <button type="button" onclick="showInfoDelete(this.value)"
-                            th:value="${facility.facilityId} + ',' + ${facility.facilityName}"
+                            th:value="${facility.facilityId} + ',' + ${facility.facilityType.facilityTypeName}"
                             class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Xoá
                     </button>
@@ -99,7 +98,7 @@
             <a th:href="@{/facility(page=${listFacility.number - 1},
             keyword = ${keywordVal})}"
                th:if="${listFacility.hasPrevious()}" class="btn btn-success">
-                Previous
+                Trước
             </a>
             <span class="btn btn-primary">
             <b th:text="${listFacility.number + 1}"></b>
@@ -109,13 +108,11 @@
             <a th:href="@{/facility(page=${listFacility.number + 1},
             keyword = ${keywordVal})}"
                th:if="${listFacility.hasNext()}" class="btn btn-success">
-                Next
+                Sau
             </a>
         </div>
     </div>
 </div>
-
-
 <script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

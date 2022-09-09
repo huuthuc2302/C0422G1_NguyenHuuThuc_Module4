@@ -27,7 +27,6 @@ public class CustomerController {
 
     @ModelAttribute
     public List<CustomerType> customerTypeList(){
-
         return iCustomerTypeService.findAll();
     }
 

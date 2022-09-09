@@ -1,7 +1,11 @@
 package com.codegym.controller;
 
 import com.codegym.model.facility.Facility;
+import com.codegym.model.facility.FacilityType;
+import com.codegym.model.facility.RentType;
 import com.codegym.service.IFacilityService;
+import com.codegym.service.IFacilityTypeService;
+import com.codegym.service.IRentTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -10,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @Controller
@@ -18,9 +23,15 @@ public class FacilityController {
     @Autowired
     private IFacilityService iFacilityService;
 
+    @Autowired
+    private IFacilityTypeService iFacilityTypeService;
+
+    @Autowired
+    private IRentTypeService iRentTypeService;
+
     @GetMapping("")
     public String index(Model model,
-                        @PageableDefault(size = 2, sort = "facilityId", direction = Sort.Direction.DESC) Pageable pageable,
+                        @PageableDefault(size = 5, sort = "facilityId", direction = Sort.Direction.DESC) Pageable pageable,
                         @RequestParam Optional<String> keyword) {
         String keywordVal = keyword.orElse("");
 
@@ -31,10 +42,11 @@ public class FacilityController {
     }
 
 
-
     @GetMapping("/add")
     public String create(Model model) {
         model.addAttribute("facility", new Facility());
+        model.addAttribute("facilityTypeList",iFacilityTypeService.findAllFacilityTypeList());
+        model.addAttribute("rentTypeList",iRentTypeService.findAllRentTypeList());
         return "/facility/create-facility";
     }
 
@@ -43,24 +55,26 @@ public class FacilityController {
     public String add(@ModelAttribute Facility facility, Model model) {
         iFacilityService.save(facility);
         model.addAttribute("msg", "Thêm mới thành công");
-        return "redirect:/facilitys";
+        return "redirect:/facility";
     }
 
     @GetMapping("/edit")
     public String edit(@RequestParam Integer id, Model model) {
         model.addAttribute("facility", iFacilityService.findById(id));
+        model.addAttribute("facilityTypeList",iFacilityTypeService.findAllFacilityTypeList());
+        model.addAttribute("rentTypeList",iRentTypeService.findAllRentTypeList());
         return "/facility/edit-facility";
     }
 
     @PostMapping("/update")
     public String update(@ModelAttribute Facility facility) {
         iFacilityService.save(facility);
-        return "redirect:/facilitys";
+        return "redirect:/facility";
     }
 
     @PostMapping("/delete")
     public String delete(@RequestParam int facilityId) {
         iFacilityService.remove(facilityId);
-        return "redirect:/facilitys";
+        return "redirect:/facility";
     }
 }

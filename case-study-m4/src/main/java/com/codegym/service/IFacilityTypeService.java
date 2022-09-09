@@ -1,2 +1,10 @@
-package com.codegym.service;public interface IFacilityTypeService {
+package com.codegym.service;
+
+import com.codegym.model.facility.FacilityType;
+
+import java.util.List;
+
+public interface IFacilityTypeService {
+
+    List<FacilityType> findAllFacilityTypeList();
 }

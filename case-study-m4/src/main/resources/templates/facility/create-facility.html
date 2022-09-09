@@ -13,6 +13,22 @@
           method="post" novalidate="novalidate">
 
         <div class="col-md-12">
+            <label class="form-label">Loại dịch vụ</label>
+<!--            <select id="type_facility" name="facilityTypeId" class="form-select" onchange="showFacilityInput()">-->
+<!--                <option value="None" >Chọn loại dịch vụ</option>-->
+<!--                <option value="1" >Villa</option>-->
+<!--                <option value="2" >House</option>-->
+<!--                <option value="3" >Room</option>-->
+<!--            </select>-->
+            <select name="serviceType" class="form-select" onchange="showFacilityInput(this)" id="type_facility"
+                    th:field="*{facilityType}">
+                <option value="None" selected disabled>Chọn loại dịch vụ</option>
+                <option th:each="service : ${facilityTypeList}" th:text="${service.facilityTypeName}"
+                        th:value="${service.facilityTypeId}"></option>
+            </select>
+        </div>
+
+        <div class="col-md-12">
             <label for="name" class="form-label">Tên dịch vụ</label>
             <input type="text" class="form-control" id="name" th:field="*{facilityName}"/>
         </div>
@@ -33,32 +49,36 @@
         </div>
 
         <div class="col-md-12">
-            <label for="phone" class="form-label">Mã kiểu thuê</label>
-            <input type="text" class="form-control" id="phone" th:field="*{rentTypeId}"/>
+            <label class="form-label">Kiểu thuê</label>
+            <select class="form-select" aria-label="Default select example" th:field="*{rentType}">
+                <option th:each="item : ${rentTypeList}" th:text="${item.rentTypeName}" th:value="${item.rentTypeId}"></option>
+            </select>
         </div>
-        <div class="col-md-12">
-            <label for="rent_type" class="form-label">Mã loại dịch vụ</label>
-            <input type="text" class="form-control" id="rent_type" th:field="*{facilityTypeId}"/>
-        </div>
-        <div class="col-md-12">
+<!--        <div class="col-md-12">-->
+<!--            <label class="form-label">Loại dịch vụ</label>-->
+<!--            <select class="form-select" aria-label="Default select example" th:field="*{facilityType}">-->
+<!--                <option th:each="item : ${facilityTypeList}" th:text="${item.facilityTypeName}" th:value="${item.facilityTypeId}"></option>-->
+<!--            </select>-->
+<!--        </div>-->
+        <div class="col-md-12" id="dv1" style="display: none">
             <label for="room" class="form-label">Tiêu chuẩn phòng</label>
-            <input type="text" class="form-control" id="room" th:field="*{standardRoom}"/>
+            <input type="text" class="form-control" id="room" th:field="*{standardRoom}" value="null"/>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12" id="dv2" style="display: none">
             <label for="description" class="form-label">Mô tả tiện nghi</label>
-            <input type="text" class="form-control" id="description" th:field="*{description}"/>
+            <input type="text" class="form-control" id="description" th:field="*{description}" value="null"/>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12" id="dv4" style="display: none">
             <label for="pool_area" class="form-label">Diện tích hồ bơi</label>
-            <input type="text" class="form-control" id="pool_area" th:field="*{poolArea}"/>
+            <input type="text" class="form-control" id="pool_area" th:field="*{poolArea}" value="0"/>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12" id="dv3" style="display: none">
             <label for="floor" class="form-label">Số tầng</label>
-            <input type="text" class="form-control" id="floor" th:field="*{numberOfFloor}"/>
+            <input type="text" class="form-control" id="floor" th:field="*{numberOfFloor}" value="0"/>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12" id="dv5" style="display: none">
             <label for="free" class="form-label">Dịch vụ Free đi kèm</label>
-            <input type="text" class="form-control" id="free" th:field="*{facilityFree}"/>
+            <input type="text" class="form-control" id="free" th:field="*{facilityFree}" value="null"/>
         </div>
 
         <div class="col-12">
@@ -66,6 +86,45 @@
         </div>
     </form>
 </div>
+
+<script>
+    function showFacilityInput() {
+        let type = document.getElementById("type_facility").value;
+        switch (type) {
+            case 'None':
+                document.getElementById("dv1").style.display="none";
+                document.getElementById("dv2").style.display="none";
+                document.getElementById("dv3").style.display="none";
+                document.getElementById("dv4").style.display="none";
+                document.getElementById("dv5").style.display="none";
+                break;
+            case "1":
+                // "Villa"
+                document.getElementById("dv1").style.display="block";
+                document.getElementById("dv2").style.display="block";
+                document.getElementById("dv3").style.display="block";
+                document.getElementById("dv4").style.display="block";
+                document.getElementById("dv5").style.display="none";
+                break;
+            case "2":
+                // "House":
+                document.getElementById("dv1").style.display="block";
+                document.getElementById("dv2").style.display="block";
+                document.getElementById("dv3").style.display="block";
+                document.getElementById("dv4").style.display="none";
+                document.getElementById("dv5").style.display="none";
+                break;
+            case "3":
+                // "Room":
+                document.getElementById("dv1").style.display="none";
+                document.getElementById("dv2").style.display="none";
+                document.getElementById("dv3").style.display="none";
+                document.getElementById("dv4").style.display="none";
+                document.getElementById("dv5").style.display="block";
+                break;
+        }
+    }
+</script>
 
 <script src="/js/bootstrap.min.js"></script>
 </body>

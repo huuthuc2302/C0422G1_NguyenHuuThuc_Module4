@@ -12,7 +12,7 @@
 
     <form class="row g-3 text-center" th:action="@{/facility/update}" th:object="${facility}"
           method="post" novalidate="novalidate">
-
+        <input type="text" th:field="*{facilityId}" hidden>
         <div class="col-md-12">
             <label for="name" class="form-label">Tên dịch vụ</label>
             <input type="text" class="form-control" id="name" th:field="*{facilityName}"/>
@@ -34,12 +34,16 @@
         </div>
 
         <div class="col-md-12">
-            <label for="phone" class="form-label">Mã kiểu thuê</label>
-            <input type="text" class="form-control" id="phone" th:field="*{rentTypeId}"/>
+            <label class="form-label">Kieu thuê</label>
+            <select class="form-select" aria-label="Default select example" th:field="*{rentType}">
+                <option th:each="item : ${rentTypeList}" th:text="${item.rentTypeName}" th:value="${item.rentTypeId}"></option>
+            </select>
         </div>
         <div class="col-md-12">
-            <label for="rent_type" class="form-label">Mã loại dịch vụ</label>
-            <input type="text" class="form-control" id="rent_type" th:field="*{facilityTypeId}"/>
+            <label class="form-label">Loại dịch vụ</label>
+            <select class="form-select" aria-label="Default select example" th:field="*{facilityType}">
+                <option th:each="item : ${facilityTypeList}" th:text="${item.facilityTypeName}" th:value="${item.facilityTypeId}"></option>
+            </select>
         </div>
         <div class="col-md-12">
             <label for="room" class="form-label">Tiêu chuẩn phòng</label>
