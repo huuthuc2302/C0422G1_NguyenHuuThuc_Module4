@@ -1,8 +1,8 @@
 package com.codegym.service.impl;
 
 import com.codegym.model.facility.Facility;
-import com.codegym.repository.IFacilityRepository;
-import com.codegym.service.IFacilityService;
+import com.codegym.repository.facility.IFacilityRepository;
+import com.codegym.service.facility.IFacilityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

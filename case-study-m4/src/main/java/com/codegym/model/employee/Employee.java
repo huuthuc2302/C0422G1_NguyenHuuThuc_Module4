@@ -1,6 +1,10 @@
-package com.codegym.model;
+package com.codegym.model.employee;
+
+import com.codegym.model.contract.Contract;
+import com.codegym.model.facility.Facility;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "nhan_vien")
@@ -8,19 +12,19 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_nhan_vien")
-    private int employeeId;
+    private Integer employeeId;
 
     @Column(name = "ho_ten")
-    private int employeeName;
+    private String employeeName;
 
-    @Column(name = "ngay_sinh")
+    @Column(name = "ngay_sinh",columnDefinition = "date")
     private String employeeDateOfBirth;
 
     @Column(name = "so_cmnd")
     private String  employeeIdCard;
 
     @Column(name = "luong")
-    private int  salary;
+    private Integer  salary;
 
     @Column(name = "so_dien_thoai")
     private String employeePhone;
@@ -31,47 +35,37 @@ public class Employee {
     @Column(name = "dia_chi")
     private String address;
 
-    @Column(name = "ma_vi_tri")
-    private String positionId;
+    @ManyToOne
+    @JoinColumn(name = "ma_vi_tri", referencedColumnName = "ma_vi_tri")
+    private Position position;
 
-    @Column(name = "ma_trinh_do")
-    private String educationDegree;
+    @ManyToOne
+    @JoinColumn(name = "ma_trinh_do", referencedColumnName = "ma_trinh_do")
+    private EducationDegree educationDegree;
 
-    @Column(name = "ma_bo_phan")
-    private String division;
+    @ManyToOne
+    @JoinColumn(name = "ma_bo_phan", referencedColumnName = "ma_bo_phan")
+    private Division division;
+
+    @OneToMany(mappedBy = "employee")
+    private List<Contract> contractList;
 
     public Employee() {
     }
 
-    public Employee(int employeeId, int employeeName, String employeeDateOfBirth, String employeeIdCard, int salary,
-                    String employeePhone, String employeeEmail, String address, String positionId,
-                    String educationDegree, String division) {
-        this.employeeId = employeeId;
-        this.employeeName = employeeName;
-        this.employeeDateOfBirth = employeeDateOfBirth;
-        this.employeeIdCard = employeeIdCard;
-        this.salary = salary;
-        this.employeePhone = employeePhone;
-        this.employeeEmail = employeeEmail;
-        this.address = address;
-        this.positionId = positionId;
-        this.educationDegree = educationDegree;
-        this.division = division;
-    }
-
-    public int getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
-    public int getEmployeeName() {
+    public String getEmployeeName() {
         return employeeName;
     }
 
-    public void setEmployeeName(int employeeName) {
+    public void setEmployeeName(String employeeName) {
         this.employeeName = employeeName;
     }
 
@@ -91,11 +85,11 @@ public class Employee {
         this.employeeIdCard = employeeIdCard;
     }
 
-    public int getSalary() {
+    public Integer getSalary() {
         return salary;
     }
 
-    public void setSalary(int salary) {
+    public void setSalary(Integer salary) {
         this.salary = salary;
     }
 
@@ -123,27 +117,36 @@ public class Employee {
         this.address = address;
     }
 
-    public String getPositionId() {
-        return positionId;
+    public Position getPosition() {
+        return position;
     }
 
-    public void setPositionId(String positionId) {
-        this.positionId = positionId;
+    public void setPosition(Position position) {
+        this.position = position;
     }
 
-    public String getEducationDegree() {
+    public EducationDegree getEducationDegree() {
         return educationDegree;
     }
 
-    public void setEducationDegree(String educationDegree) {
+    public void setEducationDegree(EducationDegree educationDegree) {
         this.educationDegree = educationDegree;
     }
 
-    public String getDivision() {
+    public Division getDivision() {
         return division;
     }
 
-    public void setDivision(String division) {
+    public void setDivision(Division division) {
         this.division = division;
     }
+
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
+    }
+
 }

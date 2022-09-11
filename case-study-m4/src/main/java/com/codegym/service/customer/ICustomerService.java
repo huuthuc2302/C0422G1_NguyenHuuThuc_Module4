@@ -1,4 +1,4 @@
-package com.codegym.service;
+package com.codegym.service.customer;
 
 import com.codegym.model.customer.Customer;
 import org.springframework.data.domain.Page;
@@ -17,4 +17,5 @@ public interface ICustomerService {
     void remove(int id);
 
     Page<Customer> findByCustomerNameContaining(String detailCustomer, Pageable pageable);
+
 }

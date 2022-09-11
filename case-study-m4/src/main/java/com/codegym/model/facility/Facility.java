@@ -1,6 +1,9 @@
 package com.codegym.model.facility;
 
+import com.codegym.model.contract.Contract;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "dich_vu")
@@ -21,12 +24,6 @@ public class Facility {
 
     @Column(name = "so_nguoi_toi_da ")
     private Integer facilityMaxPeople;
-
-//    @Column(name = "ma_kieu_thue")
-//    private Integer rentTypeId;
-
-//    @Column(name = "ma_loai_dich_vu")
-//    private Integer facilityTypeId;
 
     @Column(name = "tieu_chuan_phong")
     private String standardRoom;
@@ -51,24 +48,10 @@ public class Facility {
     @JoinColumn(name = "ma_kieu_thue", referencedColumnName = "ma_kieu_thue")
     private RentType rentType;
 
-    public Facility() {
-    }
+    @OneToMany(mappedBy = "facility")
+    private List<Contract> contractList;
 
-    public Facility(Integer facilityId, String facilityName, Integer facilityArea, Double facilityCost,
-                    Integer facilityMaxPeople, String standardRoom, String description, Double poolArea,
-                    Integer numberOfFloor, String facilityFree, FacilityType facilityType, RentType rentType) {
-        this.facilityId = facilityId;
-        this.facilityName = facilityName;
-        this.facilityArea = facilityArea;
-        this.facilityCost = facilityCost;
-        this.facilityMaxPeople = facilityMaxPeople;
-        this.standardRoom = standardRoom;
-        this.description = description;
-        this.poolArea = poolArea;
-        this.numberOfFloor = numberOfFloor;
-        this.facilityFree = facilityFree;
-        this.facilityType = facilityType;
-        this.rentType = rentType;
+    public Facility() {
     }
 
     public Integer getFacilityId() {
@@ -165,5 +148,13 @@ public class Facility {
 
     public void setRentType(RentType rentType) {
         this.rentType = rentType;
+    }
+
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
     }
 }

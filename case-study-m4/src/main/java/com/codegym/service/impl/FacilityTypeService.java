@@ -1,8 +1,8 @@
 package com.codegym.service.impl;
 
 import com.codegym.model.facility.FacilityType;
-import com.codegym.repository.IFacilityTypeRepository;
-import com.codegym.service.IFacilityTypeService;
+import com.codegym.repository.facility.IFacilityTypeRepository;
+import com.codegym.service.facility.IFacilityTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

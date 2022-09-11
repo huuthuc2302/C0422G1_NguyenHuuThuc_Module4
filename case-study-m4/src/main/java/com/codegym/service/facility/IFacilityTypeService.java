@@ -1,4 +1,4 @@
-package com.codegym.service;
+package com.codegym.service.facility;
 
 import com.codegym.model.facility.FacilityType;
 

@@ -2,8 +2,8 @@ package com.codegym.controller;
 
 import com.codegym.model.customer.Customer;
 import com.codegym.model.customer.CustomerType;
-import com.codegym.service.ICustomerService;
-import com.codegym.service.ICustomerTypeService;
+import com.codegym.service.customer.ICustomerService;
+import com.codegym.service.customer.ICustomerTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;

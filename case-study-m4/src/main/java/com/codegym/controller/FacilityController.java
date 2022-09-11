@@ -1,11 +1,9 @@
 package com.codegym.controller;
 
 import com.codegym.model.facility.Facility;
-import com.codegym.model.facility.FacilityType;
-import com.codegym.model.facility.RentType;
-import com.codegym.service.IFacilityService;
-import com.codegym.service.IFacilityTypeService;
-import com.codegym.service.IRentTypeService;
+import com.codegym.service.facility.IFacilityService;
+import com.codegym.service.facility.IFacilityTypeService;
+import com.codegym.service.facility.IRentTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -14,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.Optional;
 
 @Controller
