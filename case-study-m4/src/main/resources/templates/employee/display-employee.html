@@ -49,8 +49,8 @@
                 <td th:text="${employee.educationDegree.name}"></td>
                 <td th:text="${employee.division.name}"></td>
                 <td>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal">
-<!--                            th:attr="onclick=|infoCreateContractDetail('${contracts.contractId}')|">-->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editModal"
+                            th:attr="onclick=|infoEditEmployee('${employee.employeeId}')|">
                         Sửa
                     </button>
                 </td>
@@ -97,9 +97,87 @@
 </div>
 
 
+<!--Edit Modal-->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form th:action="@{/employees/edit}" method="post" th:object="${employee}">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="editModalLabel">Chỉnh sửa thông tin</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
 
 
 
+                    <div class="col-md-12">
+                        <label class="form-label">Tên nhân viên</label>
+                        <input type="text" class="form-control" id="nameEdit" th:field="*{employeeName}" />
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Ngày sinh</label>
+                        <input type="text" class="form-control" id="birthdayEdit" th:field="*{employeeDateOfBirth}"/>
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Số CMND</label>
+                        <input type="text" class="form-control" id="idCardEdit" th:field="*{employeeIdCard}" />
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Lương</label>
+                        <input type="text" class="form-control" id="salaryEdit" th:field="*{salary}" />
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Số điện thoại</label>
+                        <input type="text" class="form-control" id="phoneEdit" th:field="*{employeePhone}" />
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Email</label>
+                        <input type="text" class="form-control" id="emailEdit" th:field="*{employeeEmail}" />
+                    </div>
+                    <div class="col-md-12">
+                        <label class="form-label">Địa chỉ</label>
+                        <input type="text" class="form-control" id="addressEdit" th:field="*{address}" />
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label">Vị trí</label>
+                        <select class="form-select" aria-label="Default select example" th:field="*{position}">
+                            <option th:each="item : ${positionList}" th:text="${item.name}" th:value="${item.id}"></option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label">Trình độ</label>
+                        <select class="form-select" aria-label="Default select example" th:field="*{educationDegree}">
+                            <option th:each="item : ${educationDegreeList}" th:text="${item.name}" th:value="${item.id}"></option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label class="form-label">Bộ phận</label>
+                        <select class="form-select" aria-label="Default select example" th:field="*{division}">
+                            <option th:each="item : ${divisionList}" th:text="${item.name}" th:value="${item.id}"></option>
+                        </select>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Quay lại</button>
+                    <button type="button" class="btn btn-primary">Cập nhật</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+<script>
+    function infoEditEmployee(id) {
+        document.getElementById("employeeId").value = id;
+    }
+</script>
 
 <div>
     <div>

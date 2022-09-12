@@ -1,17 +1,23 @@
 package com.codegym.controller;
 
+import com.codegym.dto.CustomerDto;
 import com.codegym.model.customer.Customer;
 import com.codegym.model.customer.CustomerType;
 import com.codegym.service.customer.ICustomerService;
 import com.codegym.service.customer.ICustomerTypeService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.jws.WebParam;
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -44,14 +50,24 @@ public class CustomerController {
 
     @GetMapping("/add")
     public String create(Model model) {
-        model.addAttribute("customer", new Customer());
+        model.addAttribute("customerDto", new CustomerDto());
+        model.addAttribute("customerTypeList",iCustomerTypeService.findAll());
         return "/customer/create-customer";
     }
 
 
     @PostMapping("/add")
-    public String add(@ModelAttribute Customer customer, Model model) {
+    public String add(@ModelAttribute @Valid CustomerDto customerDto, Model model,
+                      BindingResult bindingResult, RedirectAttributes redirectAttributes) {
+        new CustomerDto().validate(customerDto, bindingResult);
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("customerTypeList",iCustomerTypeService.findAll());
+            return "/customer/create-customer";
+        }
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(customerDto,customer);
         iCustomerService.save(customer);
+        redirectAttributes.addFlashAttribute("mess","Thêm mơi thành công!");
         model.addAttribute("msg", "Thêm mới thành công");
         return "redirect:/customers";
     }

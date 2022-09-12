@@ -9,7 +9,7 @@
 <div class="container w-50 mt-5 p-2 bg-success" style="border: 1px solid grey; border-radius: 15px">
     <h3 align="center">THÊM MỚI KHÁCH HÀNG</h3>
 
-    <form class="row g-3 text-center" th:action="@{/customers/add}" th:object="${customer}"
+    <form class="row g-3 text-center" th:action="@{/customers/add}" th:object="${customerDto}"
           method="post" novalidate="novalidate">
 
         <div class="col-md-12">
@@ -23,6 +23,7 @@
             <label for="name" class="form-label">Họ tên</label>
             <input type="text" class="form-control" id="name" th:field="*{customerName}"/>
         </div>
+        <div class="mb-3 text-danger" th:errors="*{customerName}"></div>
 
         <div class="col-md-12">
             <label for="birthday" class="form-label">Ngày sinh</label>

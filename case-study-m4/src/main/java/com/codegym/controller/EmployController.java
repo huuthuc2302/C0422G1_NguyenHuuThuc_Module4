@@ -1,6 +1,7 @@
 package com.codegym.controller;
 
 import com.codegym.model.contract.ContractDetail;
+import com.codegym.model.employee.Employee;
 import com.codegym.service.employee.IDivisionService;
 import com.codegym.service.employee.IEducationDegreeService;
 import com.codegym.service.employee.IEmployeeService;
@@ -45,6 +46,7 @@ public class EmployController {
         model.addAttribute("divisionList", iDivisionService.findAll());
         model.addAttribute("educationDegreeList", iEducationDegreeService.findAll());
         model.addAttribute("positionList", iPositionService.findAll());
+        model.addAttribute("employee", new Employee());
         return "/employee/display-employee";
     }
 }
