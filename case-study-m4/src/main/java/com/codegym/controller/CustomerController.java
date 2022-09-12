@@ -74,13 +74,24 @@ public class CustomerController {
 
     @GetMapping("/edit")
     public String edit(@RequestParam Integer id, Model model) {
-        model.addAttribute("customer", iCustomerService.findById(id));
+        model.addAttribute("customerTypeList",iCustomerTypeService.findAll());
+        model.addAttribute("customerDto", iCustomerService.findById(id));
         return "/customer/edit-customer";
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute("customer") Customer customer) {
+    public String update(@ModelAttribute("customer") @Valid CustomerDto customerDto,
+                         BindingResult bindingResult, RedirectAttributes redirectAttributes,
+                         Model model) {
+        new CustomerDto().validate(customerDto, bindingResult);
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("customerTypeList",iCustomerTypeService.findAll());
+            return "customer/edit-customer";
+        }
+        Customer customer = new Customer();
+        BeanUtils.copyProperties(customerDto,customer);
         iCustomerService.save(customer);
+        redirectAttributes.addFlashAttribute("mess","Cập nhật thành công!");
         return "redirect:/customers";
     }
 
