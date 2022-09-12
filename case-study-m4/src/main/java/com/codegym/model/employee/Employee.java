@@ -1,7 +1,6 @@
 package com.codegym.model.employee;
 
 import com.codegym.model.contract.Contract;
-import com.codegym.model.facility.Facility;
 
 import javax.persistence.*;
 import java.util.List;
@@ -17,14 +16,14 @@ public class Employee {
     @Column(name = "ho_ten")
     private String employeeName;
 
-    @Column(name = "ngay_sinh",columnDefinition = "date")
+    @Column(name = "ngay_sinh", columnDefinition = "date")
     private String employeeDateOfBirth;
 
     @Column(name = "so_cmnd")
-    private String  employeeIdCard;
+    private String employeeIdCard;
 
     @Column(name = "luong")
-    private Integer  salary;
+    private Integer salary;
 
     @Column(name = "so_dien_thoai")
     private String employeePhone;
