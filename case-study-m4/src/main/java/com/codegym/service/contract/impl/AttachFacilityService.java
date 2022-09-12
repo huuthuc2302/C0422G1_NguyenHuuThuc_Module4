@@ -1,4 +1,4 @@
-package com.codegym.service.impl;
+package com.codegym.service.contract.impl;
 
 import com.codegym.model.contract.AttachFacility;
 import com.codegym.repository.contract.IAttachFacilityRepository;
