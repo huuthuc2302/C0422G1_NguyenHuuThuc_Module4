@@ -1,8 +1,6 @@
 package com.codegym.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -11,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HomePageController {
 
     @GetMapping("")
-    public String display(){
+    public String display() {
         return "/home-page";
     }
 

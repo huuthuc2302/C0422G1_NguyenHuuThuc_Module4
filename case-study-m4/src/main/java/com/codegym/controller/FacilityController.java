@@ -38,15 +38,13 @@ public class FacilityController {
         return "/facility/display-facility";
     }
 
-
     @GetMapping("/add")
     public String create(Model model) {
         model.addAttribute("facility", new Facility());
-        model.addAttribute("facilityTypeList",iFacilityTypeService.findAllFacilityTypeList());
-        model.addAttribute("rentTypeList",iRentTypeService.findAllRentTypeList());
+        model.addAttribute("facilityTypeList", iFacilityTypeService.findAllFacilityTypeList());
+        model.addAttribute("rentTypeList", iRentTypeService.findAllRentTypeList());
         return "/facility/create-facility";
     }
-
 
     @PostMapping("/add")
     public String add(@ModelAttribute Facility facility, Model model) {
@@ -58,8 +56,8 @@ public class FacilityController {
     @GetMapping("/edit")
     public String edit(@RequestParam Integer id, Model model) {
         model.addAttribute("facility", iFacilityService.findById(id));
-        model.addAttribute("facilityTypeList",iFacilityTypeService.findAllFacilityTypeList());
-        model.addAttribute("rentTypeList",iRentTypeService.findAllRentTypeList());
+        model.addAttribute("facilityTypeList", iFacilityTypeService.findAllFacilityTypeList());
+        model.addAttribute("rentTypeList", iRentTypeService.findAllRentTypeList());
         return "/facility/edit-facility";
     }
 
@@ -74,4 +72,5 @@ public class FacilityController {
         iFacilityService.remove(facilityId);
         return "redirect:/facility";
     }
+
 }

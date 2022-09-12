@@ -7,8 +7,17 @@
 </head>
 <body>
 <center>
-    <h1>DANH SÁCH KHÁCH HÀNG</h1>
+    <h1>DANH SÁCH HỢP ĐỒNG</h1>
 </center>
+
+<nav class="navbar bg-light">
+    <div class="container-fluid">
+        <form th:action="@{/contract}" class="d-flex" role="search">
+            <input class="form-control me-2" type="search" name="keyword" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Tìm</button>
+        </form>
+    </div>
+</nav>
 
 <div class="container ">
     <div class="row">
@@ -30,9 +39,10 @@
                 <td th:text="${contracts.endDate}"></td>
                 <td th:text="${contracts.deposit}"></td>
                 <td>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#modelIdCreate">+
-                        </button>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                            th:attr="onclick=|infoCreateContractDetail('${contracts.contractId}')|">
+                        +
+                    </button>
                 </td>
                 <td>
                     <a th:href="|#listContractDetailModal${contracts.contractId}|" data-toggle="modal">
@@ -43,141 +53,79 @@
                 </td>
             </tr>
         </table>
-    </div>
-</div>
 
-<!-- Modal Create Contract-->
-<form th:action="@{/contract/createContract}" method="post">
-    <div class="modal fade" id="modelIdCreate" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Ngày bắt đầu</label>
-                        <div class="col-sm-10">
-                            <input type="date" class="form-control" id="startDate">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Ngày kết thúc</label>
-                        <div class="col-sm-10">
-                            <input type="date" class="form-control" id="endDate">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Tiền gửi</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" id="deposit">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Tổng tiền</label>
-                        <div class="col-sm-10">
-                            <input type="number" class="form-control" disabled id="total">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Khách hàng thuê dịch vụ</label>
-                        <div class="col-sm-10">
-                            <select class="form-select" aria-label="Default select example" id="customer">
-                                <option th:each="item : ${customerList}" th:text="${item.name}"
-                                        th:value="${item.id}"></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Dịch vụ</label>
-                        <div class="col-sm-10">
-                            <select class="form-select" aria-label="Default select example"
-                                    id="idFacility">
-                                <option th:each="item : ${facilityList}" th:text="${item.name}"
-                                        th:value="${item.id}"></option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <label class="col-sm-2 col-form-label">Dịch vụ đi kèm</label>
-                        <div class="col-sm-10">
-                            <button type="button" class="btn btn-primary" onclick="selContract()">+</button>
-                        </div>
-
-                        <div id="contractDetail">
-                            <table class="table table-bordered ">
-                                <thead class="bg-primary text-center text-light">
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Name</th>
-                                    <th>Cost</th>
-                                    <th>Unit</th>
-                                    <th>Status</th>
-                                    <th>Quantity</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr th:each="item, stt : ${contractDetailList}">
-                                    <td th:text="${stt.count}"></td>
-                                    <td hidden>
-                                        <div class="input-group">
-                                            <input type="number" th:value="${item.id}"
-                                                   class="form-control border-0 bg-white"
-                                                   name="idAttach" disabled>
-                                        </div>
-                                    </td>
-                                    <td th:text="${item.name}"></td>
-                                    <td th:text="${item.cost}"></td>
-                                    <td hidden>
-                                        <div class="input-group">
-                                            <input type="number" th:value="${item.cost}"
-                                                   class="form-control border-0 bg-white" name="costContractDetail"
-                                                   disabled>
-                                        </div>
-                                    </td>
-                                    <td th:text="${item.unit}"></td>
-                                    <td th:text="${item.status}"></td>
-                                    <td>
-                                        <div class="input-group">
-                                            <input type="number" class="form-control quantityContract"
-                                                   name="quantity">
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary btn-sm" data-bs-dismiss="modal">Hủy bỏ</button>
-                    <input type="button" class="btn btn-outline-primary btn-sm" value="Tạo hợp đồng"
-                           onclick="addNewContractDetail()">
+        <div>
+            <div>
+                <div>
+                    <a th:href="@{/contract(page=${listContract.number - 1},
+            keyword = ${keywordVal})}"
+                       th:if="${listContract.hasPrevious()}" class="btn btn-success">
+                        Trước
+                    </a>
+                    <span class="btn btn-primary">
+            <b th:text="${listContract.number + 1}"></b>
+            /
+            <b th:text="${listContract.totalPages}"></b>
+                </span>
+                    <a th:href="@{/contract(page=${listContract.number + 1},
+            keyword = ${keywordVal})}"
+                       th:if="${listContract.hasNext()}" class="btn btn-success">
+                        Sau
+                    </a>
                 </div>
             </div>
         </div>
+
     </div>
-</form>
-<input type="text" hidden id="flag" th:value="${flag}">
+</div>
 
-<script src="/js/bootstrap.min.js"></script>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <form action="/contract/createContractDetail" method="post" th:object="${contractDetail}">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tạo hợp đồng chi tiết</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>Mã hợp đồng</label>
+                        <input readonly id="contractId" th:field="*{contract}" type="text" class="form-control"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Tên dịch vụ đi kèm</label>
+                        <select th:field="*{attachFacility}" class="form-select">
+                            <option value="">Chọn dịch vụ đi kèm</option>
+                            <option th:each="attachFacilities : ${attachFacilityList}"
+                                    th:value="${attachFacilities.attachFacilityId}"
+                                    th:text="${attachFacilities.attachFacilityName} + ' - giá: ' + ${attachFacilities.cost}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Số lượng</label>
+                        <input type="text" th:field="*{quantity}" class="form-control"/>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Huỷ bỏ</button>
+                    <button type="button" class="btn btn-primary">Tạo mới</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>
+
 <script>
-    let flag = $('#flag').val();
-    if (flag == 1) {
-        $(document).ready(function () {
-            $("#modelId").modal('show');
-        })
+    function infoCreateContractDetail(id) {
+        document.getElementById("contractId").value = id;
     }
 </script>
-
-<script>
-    document.getElementById("contractDetail").style.display = "none";
-
-    function selContract() {
-        document.getElementById("contractDetail").style.display = "block";
-    }
-</script>
-
-
 
 <script src="/js/bootstrap.min.js"></script>
 </body>

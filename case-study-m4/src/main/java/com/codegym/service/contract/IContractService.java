@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface IContractService {
 
-    Page<Contract> findAllContract(Pageable pageable);
+    Page<Contract> findByCustomerCustomerNameContaining(String detailContract, Pageable pageable);
 
     List<Contract> findAll();
 

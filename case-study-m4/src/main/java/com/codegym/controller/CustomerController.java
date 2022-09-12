@@ -26,7 +26,7 @@ public class CustomerController {
     private ICustomerTypeService iCustomerTypeService;
 
     @ModelAttribute
-    public List<CustomerType> customerTypeList(){
+    public List<CustomerType> customerTypeList() {
         return iCustomerTypeService.findAll();
     }
 

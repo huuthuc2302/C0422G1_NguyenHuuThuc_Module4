@@ -49,4 +49,5 @@ public class FacilityType {
     public void setFacilityTypeList(List<Facility> facilityTypeList) {
         this.facilityTypeList = facilityTypeList;
     }
+
 }

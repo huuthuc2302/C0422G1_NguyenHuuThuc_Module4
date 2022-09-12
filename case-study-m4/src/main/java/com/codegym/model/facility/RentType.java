@@ -40,4 +40,5 @@ public class RentType {
     public void setRentTypeName(String rentTypeName) {
         this.rentTypeName = rentTypeName;
     }
+
 }

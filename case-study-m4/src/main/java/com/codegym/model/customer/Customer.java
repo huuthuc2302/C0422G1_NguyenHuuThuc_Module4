@@ -17,10 +17,10 @@ public class Customer {
     private String customerName;
 
     @Column(name = "ngay_sinh")
-    private String  customerBirth;
+    private String customerBirth;
 
     @Column(name = "gioi_tinh")
-    private int  customerGender;
+    private int customerGender;
 
     @Column(name = "so_cmnd")
     private String customerIdCard;
