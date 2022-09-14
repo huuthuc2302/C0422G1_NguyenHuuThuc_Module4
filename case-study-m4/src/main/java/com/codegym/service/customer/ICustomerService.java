@@ -12,9 +12,9 @@ public interface ICustomerService {
 
     void save(Customer customer);
 
-    Customer findById(int id);
+    Customer findById(Integer id);
 
-    void remove(int id);
+    void remove(Integer id);
 
     Page<Customer> findByCustomerNameContaining(String detailCustomer, Pageable pageable);
 

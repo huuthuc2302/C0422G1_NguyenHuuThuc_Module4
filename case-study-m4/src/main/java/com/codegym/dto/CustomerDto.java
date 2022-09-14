@@ -5,32 +5,32 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.time.Period;
 
 public class CustomerDto implements Validator {
 
-    private int customerId;
+    private Integer customerId;
 
-    @NotBlank(message = "Vui lòng nhập thông tin!")
+    @NotNull(message = "Vui lòng nhập thông tin!")
     private String customerName;
 
     private String customerBirth;
 
-    private int customerGender;
+    private Integer customerGender;
 
-    @NotBlank(message = "Vui lòng nhập thông tin!")
+    @NotNull(message = "Vui lòng nhập thông tin!")
     private String customerIdCard;
 
-    @NotBlank(message = "Vui lòng nhập thông tin!")
+    @NotNull(message = "Vui lòng nhập thông tin!")
     private String customerPhone;
 
     @Email(message = "Email nhập sai định dạng!")
-    @NotBlank(message = "Vui lòng nhập thông tin!")
+    @NotNull(message = "Vui lòng nhập thông tin!")
     private String customerEmail;
 
-    @NotBlank(message = "Vui lòng nhập thông tin!")
+    @NotNull(message = "Vui lòng nhập thông tin!")
     private String customerAddress;
 
     private CustomerType customerType;
@@ -39,11 +39,11 @@ public class CustomerDto implements Validator {
     public CustomerDto() {
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
@@ -63,11 +63,11 @@ public class CustomerDto implements Validator {
         this.customerBirth = customerBirth;
     }
 
-    public int getCustomerGender() {
+    public Integer getCustomerGender() {
         return customerGender;
     }
 
-    public void setCustomerGender(int customerGender) {
+    public void setCustomerGender(Integer customerGender) {
         this.customerGender = customerGender;
     }
 

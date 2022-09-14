@@ -23,13 +23,13 @@
             <label for="name" class="form-label">Họ tên</label>
             <input type="text" class="form-control" id="name" th:field="*{customerName}"/>
         </div>
-        <div class="mb-3 text-danger" th:errors="*{customerName}"></div>
+        <div class="mb-3 text-white" th:errors="*{customerName}"></div>
 
         <div class="col-md-12">
             <label for="birthday" class="form-label">Ngày sinh</label>
             <input type="date" class="form-control" id="birthday" th:field="*{customerBirth}"/>
         </div>
-        <div class="mb-3 text-danger" th:errors="*{customerBirth}"></div>
+        <div class="mb-3 text-white" th:errors="*{customerBirth}"></div>
 
         <div class="col-md-12">
             <label for="gender" class="form-label">Giới tính </label>
@@ -43,25 +43,25 @@
             <label for="id_card" class="form-label">Số CMND</label>
             <input type="text" class="form-control" id="id_card" th:field="*{customerIdCard}"/>
         </div>
-        <div class="mb-3 text-danger" th:errors="*{customerIdCard}"></div>
+        <div class="mb-3 text-white" th:errors="*{customerIdCard}"></div>
 
         <div class="col-md-12">
             <label for="phone" class="form-label">Số Điện Thoại</label>
             <input type="text" class="form-control" id="phone" th:field="*{customerPhone}"/>
         </div>
-        <div class="mb-3 text-danger" th:errors="*{customerPhone}"></div>
+        <div class="mb-3 text-white" th:errors="*{customerPhone}"></div>
 
         <div class="col-md-12">
             <label for="email" class="form-label">Email</label>
             <input type="text" class="form-control" id="email" th:field="*{customerEmail}"/>
         </div>
-        <div class="mb-3 text-danger" th:errors="*{customerEmail}"></div>
+        <div class="mb-3 text-white" th:errors="*{customerEmail}"></div>
 
         <div class="col-md-12">
             <label for="address" class="form-label">Địa chỉ</label>
             <input type="text" class="form-control" id="address" th:field="*{customerAddress}"/>
         </div>
-        <div class="mb-3 text-danger" th:errors="*{customerAddress}"></div>
+        <div class="mb-3 text-white" th:errors="*{customerAddress}"></div>
 
         <div class="col-12">
             <button type="submit" class="btn btn-primary">Xác nhận</button>

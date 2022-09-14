@@ -27,12 +27,12 @@ public class CustomerService implements ICustomerService {
     }
 
     @Override
-    public Customer findById(int id) {
+    public Customer findById(Integer id) {
         return iCustomerRepository.findById(id).orElse(null);
     }
 
     @Override
-    public void remove(int id) {
+    public void remove(Integer id) {
         iCustomerRepository.deleteById(id);
     }
 

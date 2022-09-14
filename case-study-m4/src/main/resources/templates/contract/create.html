@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>THÊM MỚI HỢP ĐỒNG</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-4">
+  <div class="row w-50 mx-auto">
+    <div class="col-lg-12">
+      <h2 style="text-align: center">THÊM MỚI HỢP ĐỒNG</h2>
+      <form action="/contract/create" method="post" th:object="${contractDto}">
+        <div class="mb-2">
+          <label class="form-label">Ngày bắt đầu</label>
+          <input type="date" th:field="*{startDate}" class="form-control"/>
+          <div class="mb-4 text-danger" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}"></div>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Ngày kết thúc</label>
+          <input type="date" th:field="*{endDate}" class="form-control"/>
+          <div class="mb-4 text-danger" th:if="${#fields.hasErrors('endDate')}" th:errors="*{endDate}"></div>
+
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Số tiền cọc trước</label>
+          <input type="text" th:field="*{deposit}" class="form-control"/>
+          <div class="mb-4 text-danger" th:if="${#fields.hasErrors('deposit')}" th:errors="*{deposit}"></div>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Tên nhân viên</label>
+          <select th:field="*{employee}" class="form-select">
+            <option value="">Chọn nhân viên</option>
+            <option th:each="employees : ${employees}" th:value="${employees.id}"
+                    th:text="${employees.name}"></option>
+          </select>
+          <div class="mb-4 text-danger" th:if="${#fields.hasErrors('employee')}" th:errors="*{employee}"></div>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Khách hàng</label>
+          <select th:field="*{customer}" class="form-select">
+            <option value="">Chọn khách hàng</option>
+            <option th:each="customers : ${customers}" th:value="${customers.id}"
+                    th:text="${customers.name}"></option>
+          </select>
+          <div class="mb-4 text-danger" th:if="${#fields.hasErrors('customer')}" th:errors="*{customer}"></div>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Dịch vụ</label>
+          <select th:field="*{facility}" class="form-select">
+            <option value="">Chọn dịch vụ</option>
+            <option th:each="facilities : ${facilities}" th:value="${facilities.id}"
+                    th:text="${facilities.name}"></option>
+          </select>
+          <div class="mb-4 text-danger" th:if="${#fields.hasErrors('facility')}" th:errors="*{facility}"></div>
+        </div>
+
+        <div style="text-align: center">
+          <a href="/contract"><input class="btn btn-primary" type="button" value="Quay lại"></a>
+          <button type="submit" class="btn btn-primary">Lưu</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Add Modal Contract Detail HTML -->
+<div id="addContractDetailModal" class="modal fade" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form>
+        <div class="modal-header">
+          <h4 class="modal-title">Tạo hợp đồng chi tiết</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label>Mã hợp đồng</label>
+            <input type="number" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Tên dịch vụ đi kèm</label>
+            <input type="text" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Số lượng</label>
+            <input type="number" class="form-control">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <input type="button" class="btn btn-default" data-dismiss="modal" value="Quay lại">
+          <input type="submit" class="btn btn-success" value="Lưu">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>

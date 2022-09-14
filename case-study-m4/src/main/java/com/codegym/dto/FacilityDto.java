@@ -16,7 +16,7 @@ public class FacilityDto implements Validator {
     private Integer facilityId;
 
     @NotBlank(message = "Không được để trống")
-    @Pattern(regexp = "^([A-Z0-9])[a-z0-9]+((\\s[A-Z0-9])[a-z0-9]+)+$",
+    @Pattern(regexp = "^([0-9A-Z][\\w]*)+( [0-9A-Z][\\w]*)*$",
             message = "Tên dịch vụ được phép chứa số.Và các kí tự đầu tiên của mỗi từ phải viết hoa")
     private String facilityName;
 

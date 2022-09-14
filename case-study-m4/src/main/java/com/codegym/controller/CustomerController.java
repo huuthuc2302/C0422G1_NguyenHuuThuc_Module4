@@ -80,7 +80,7 @@ public class CustomerController {
     }
 
     @PostMapping("/update")
-    public String update(@ModelAttribute("customer") @Valid CustomerDto customerDto,
+    public String update(@ModelAttribute("customerDto") @Valid CustomerDto customerDto,
                          BindingResult bindingResult, RedirectAttributes redirectAttributes,
                          Model model) {
         new CustomerDto().validate(customerDto, bindingResult);
@@ -96,7 +96,7 @@ public class CustomerController {
     }
 
     @PostMapping("/delete")
-    public String delete(@RequestParam int customerId) {
+    public String delete(@RequestParam Integer customerId) {
         iCustomerService.remove(customerId);
         return "redirect:/customers";
     }

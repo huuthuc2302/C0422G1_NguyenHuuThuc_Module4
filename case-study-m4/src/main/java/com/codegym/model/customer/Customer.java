@@ -11,7 +11,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ma_khach_hang")
-    private int customerId;
+    private Integer customerId;
 
     @Column(name = "ho_ten")
     private String customerName;
@@ -20,7 +20,7 @@ public class Customer {
     private String customerBirth;
 
     @Column(name = "gioi_tinh")
-    private int customerGender;
+    private Integer customerGender;
 
     @Column(name = "so_cmnd")
     private String customerIdCard;
@@ -44,9 +44,7 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(int customerId, String customerName, String customerBirth, int customerGender,
-                    String customerIdCard, String customerPhone, String customerEmail,
-                    String customerAddress, CustomerType customerType) {
+    public Customer(Integer customerId, String customerName, String customerBirth, Integer customerGender, String customerIdCard, String customerPhone, String customerEmail, String customerAddress, CustomerType customerType, List<Contract> contractList) {
         this.customerId = customerId;
         this.customerName = customerName;
         this.customerBirth = customerBirth;
@@ -56,13 +54,14 @@ public class Customer {
         this.customerEmail = customerEmail;
         this.customerAddress = customerAddress;
         this.customerType = customerType;
+        this.contractList = contractList;
     }
 
-    public int getCustomerId() {
+    public Integer getCustomerId() {
         return customerId;
     }
 
-    public void setCustomerId(int customerId) {
+    public void setCustomerId(Integer customerId) {
         this.customerId = customerId;
     }
 
@@ -82,11 +81,11 @@ public class Customer {
         this.customerBirth = customerBirth;
     }
 
-    public int getCustomerGender() {
+    public Integer getCustomerGender() {
         return customerGender;
     }
 
-    public void setCustomerGender(int customerGender) {
+    public void setCustomerGender(Integer customerGender) {
         this.customerGender = customerGender;
     }
 
@@ -128,5 +127,13 @@ public class Customer {
 
     public void setCustomerType(CustomerType customerType) {
         this.customerType = customerType;
+    }
+
+    public List<Contract> getContractList() {
+        return contractList;
+    }
+
+    public void setContractList(List<Contract> contractList) {
+        this.contractList = contractList;
     }
 }
